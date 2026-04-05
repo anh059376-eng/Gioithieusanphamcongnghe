@@ -1,14 +1,14 @@
-**TechStore — Website giới thiệu sản phẩm Công Nghệ**
+**ATechZ — Website giới thiệu sản phẩm Công Nghệ**
 Một trang web tĩnh (HTML/CSS/JS) để trình diễn trang web gioiws thiệu thiết bị công nghệ với giao diện người dùng và trang quản trị đơn giản.
 **Tên thành viên:**
-- **Lê Văn Thành Anh:** thực hiện phần admin,Mac,iPad.
-- **Phạm Nguyễn Phương Anh:** thực hiện phần iPhone.
-- **Nguyễn Thị Vân Anh:** thực hiện phần giỏ hàng và đăng ký.
-- **Hồ Thanh Tú:** thực hiện phần Airpods, sản phẩm.
+- **Lê Văn Thành Anh:** 
+- **Phạm Nguyễn Phương Anh:** 
+- **Nguyễn Thị Vân Anh:** 
+- **Hồ Thanh Tú:**
 **Mô tả ngắn:**
 
 - **Project:** Trang giới thiệu thiết bị công nghệ đơn giản, lưu dữ liệu cục bộ bằng `LocalStorage`.
-- **Đã deploy:** site production hiện tại: `https://dreamycakee.netlify.app` (đã deploy bằng Netlify).
+- **Đã deploy:** site production hiện tại: `https://gioithiusanpham-d553e1.netlify.app` (đã deploy bằng Netlify).
 
 **Tính năng chính:**
 
@@ -33,13 +33,13 @@ python -m http.server 8000
 npx http-server -p 8000
 ```
 
-Sau đó mở `http://localhost:8000/user/index.html` hoặc `http://localhost:8000/admin/admin-login.html`.
+Sau đó mở `http://127.0.0.1:8000/user/index.html` hoặc `http://127.0.0.1:8000/admin/admin-index.html`.
 
 **Deploy lên Netlify (đã thực hiện)**
 
 - Site đã được link và deploy lên Netlify
-  -> admin url: https://dreamycakee.netlify.app/admin/admin-login.html
-  -> user url: https://dreamycakee.netlify.app/user/index.html
+  -> admin url: https://gioithiusanpham-d553e1.netlify.app/admin/admin-index.html
+  -> user url: https://gioithiusanpham-d553e1.netlify.app/user
 
 ```bash
 # đăng nhập (mở trình duyệt)
