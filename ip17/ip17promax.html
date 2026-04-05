@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 17 Pro Max - Apple Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../ip17/17pro.css">
+    <style>
+        /* CSS cho Footer để khớp với giao diện trang */
+        .footer {
+            background: #111;
+            /* Nền tối để hợp với trang */
+            color: #86868b;
+            /* Màu chữ xám nhạt */
+            text-align: center;
+            padding: 60px 30px;
+            font-family: "Inter", sans-serif;
+            position: relative;
+            margin-top: 80px;
+            /* Khoảng cách với phần trên */
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-separator {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            margin-bottom: 40px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer h2 {
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .footer p {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-info {
+            margin-top: 30px;
+        }
+
+        /* ================= VIDEO MODAL ================= */
+        .video-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .video-modal.active {
+            display: flex;
+        }
+
+        .video-modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            background: #000;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-video {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-video:hover {
+            color: #ccc;
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; } to { opacity: 1; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <style>
+        /* ===== Back Button ===== */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--apple-blue);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+
+        .back-btn:hover {
+            opacity: 0.7;
+        }
+
+        .back-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--apple-blue);
+            flex-shrink: 0;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-divider {
+            width: 1px;
+            height: 16px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+
+    <nav class="local-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <!-- Nút quay lại trang chủ -->
+                <a href="../user/index.html#page-iphone" class="back-btn" id="back-home-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+                    </svg>
+                    Trang trước
+                </a>
+                <div class="nav-divider"></div>
+                <div class="nav-title">iPhone 17 Pro</div>
+            </div>          
+        </div>
+    </nav>
+
+    <main>
+        <header class="section hero-section text-center">
+            <h2 class="hero-subtitle">iPhone 17</h2>
+            <h1 class="hero-title gradient-pro">PRO MAX</h1>
+            <div class="hero-image-wrapper" style="display:flex; justify-content:center; align-items:center;">
+                <img src="../ip17/images/initial__d2ghrz27b54y_large_2x.png" alt="iPhone 17 Pro Max Camera Close-up"
+                    class="hero-img" style="display:block; margin:0 auto;">
+            </div>
+            <div class="hero-action">
+                <button class="btn btn-medium" onclick="window.location.href='../user/index.html?search=iPhone%2017%20Pro%20Max'">Mua</button>
+            </div>
+        </header>
+
+        <section class="section highlights-section">
+            <div class="section-header">
+                <h2 class="section-title">Nhận những điểm nổi bật.</h2>
+                <a href="javascript:void(0)" onclick="openVideoModal('../ip17/images/video1p17promax.mp4')" class="link-blue">Watch
+                    the film <span
+                        class="material-symbols-outlined icon-small">play_circle</span></a>
+            </div>
+
+            <div class="carousel-container mt-medium" id="highlight-carousel">
+                <div class="carousel-track">
+                    <article class="carousel-slide" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px;">
+                        <div class="slide-content" style="position: static; text-align: center; margin-bottom: 30px;">
+                            <h3 class="slide-text">Thiết kế unibody bằng nhôm rèn nhiệt cho khả năng chuyên nghiệp vượt trội.
+                            </h3>
+                        </div>
+                        <img src="../ip17/images/3ip3.png" alt="iPhone Colors" class="slide-img" style="max-width: 900px; height: auto; object-fit: contain;">
+                    </article>
+                    <article class="carousel-slide slide-vertical">
+                        <img src="../ip17/images/chip.png" alt="Gaming" class="slide-img">
+                        <div class="slide-content">
+                            <h3 class="slide-text">A19 Pro, làm mát bằng hơi nước cho hiệu suất nhanh như chớp.<br> Thời lượng pin đột phá.</h3>
+                        </div>
+                    </article>
+                    <article class="carousel-slide">
+                        <div class="slide-content">
+                            <h3 class="slide-text">Hệ thống camera chuyên nghiệp tối thượng. Tất cả các camera sau Fusion 48MP.</h3>
+                        </div>
+                        <img src="../ip17/images/highlights_zoom_endframe__dyqkn2swjbsm_large_2x.jpg" alt="Camera Zoom"
+                            class="slide-img">
+                    </article>
+                    <article class="carousel-slide">
+                        <div class="slide-content" style="width: 100%; left: 0; max-width: none; text-align: center;">
+                            <h3 class="slide-text" style="white-space: nowrap;">Hệ điều hành iOS 26. Cái nhìn mới.</h3>
+                        </div>
+                        <img src="../ip17/images/highlights_ios__e4213yr3208y_large_2x.png"
+                            alt="Camera Control" class="slide-img">
+                    </article>
+                    <article class="carousel-slide">
+                        <div class="slide-content">
+                            <h3 class="slide-text"><span class="magichromatic-text">Apple Intelligence.</span><br>Các tính năng hữu ích dễ sử dụng từ chỉnh sửa ảnh đế<br>dịch thuật trực tiếp.</h3>
+                        </div>
+                        <img src="../ip17/images/highlights_apple_intelligence__c9a098yssb8m_large_2x-2.png"
+                            alt="Battery Life" class="slide-img" >
+                    </article>
+                </div>
+            </div>
+
+            <div class="carousel-indicators mt-small">
+                <button class="dot active" data-index="0"></button>
+                <button class="dot" data-index="1"></button>
+                <button class="dot" data-index="2"></button>
+                <button class="dot" data-index="3"></button>
+                <button class="dot" data-index="4"></button>
+            </div>
+        </section>
+
+        <section class="section design-section text-center mt-large">
+            <p class="accent-text">Design</p>
+            <h2 class="headline-huge mt-small">Unibody enclosure.<br>Makes a strong case<br>for itself.</h2>
+            <p class="description-text mx-auto mt-medium text-gray">
+                Giới thiệu iPhone 17 Pro và iPhone 17 Pro Max, 
+                được thiết kế từ trong ra ngoài để trở thành những mẫu iPhone mạnh mẽ nhất từng được sản xuất. 
+                Cốt lõi của thiết kế mới là vỏ bọc bằng nhôm nguyên khối được rèn nhiệt giúp tối đa hóa hiệu suất,
+                 dung lượng pin và độ bền.
+            </p>
+            <div class="design-image mt-large">
+                <img src="../ip17/images/image.png"
+                    alt="iPhone Unibody" class="mx-auto">
+            </div>
+        </section>
+
+        <section class="section closer-look-section bg-dark-gray mt-large rounded-box">
+            <h2 class="section-title">Hãy nhìn kỹ hơn.</h2>
+            <div class="interactive-layout mt-medium">
+                <div class="accordion-menu" id="feature-menu">
+                    <button class="accordion-btn active"
+                        data-image="../ip17/images/initial__d2ghrz27b54y_large_2x.png"> 
+                        <span class="icon bg-orange"></span> Colors 
+                    </button>
+                    <button class="accordion-btn"
+                        data-image="../ip17/images/Gemini_Generated_Image_npv3gknpv3gknpv3-Photoroom.png">
+                        <span class="icon border-icon">+</span> Nhôm Unibody
+                    </button>
+                    <button class="accordion-btn"
+                        data-image="../ip17/images/Gemini_Generated_Image_py4h5py4h5py4h5p-Photoroom.png">
+                        <span class="icon border-icon">+</span> Buồn hơi
+                    </button>
+                    <button class="accordion-btn"
+                        data-image="../ip17/images/Gemini_Generated_Image_yvr8ryvr8ryvr8ry.png">
+                        <span class="icon border-icon">+</span> Nút hành động
+                    </button>
+                    <button class="accordion-btn"
+                        data-image="../ip17/images/camera_control__gl7rgu1l9066_large_2x.png">
+                        <span class="icon border-icon">+</span> Điều kiển máy ảnh
+                    </button>
+                </div>              
+                <div class="feature-image-container">
+                    <img id="feature-image" src="../ip17/images/initial__d2ghrz27b54y_large_2x.png" alt="iPhone 17 Pro Feature" style="transition: opacity 0.3s ease;">
+                </div>
+            </div> 
+        </section>
+
+        <section class="section camera-section mt-large">
+            <h2 class="headline-huge text-center">Phóng to lớn về phía trước.</h2>
+
+            <div class="camera-grid mt-medium">
+                <div class="camera-lens-image">
+                    <img src="../ip17/images/Ảnh màn hình 2026-03-31 lúc 02.29.49.png" alt="Camera Lenses">
+                </div>
+                <div class="camera-specs">
+                    <div class="spec-block">
+                        <p class="spec-label">Lên đến</p>
+                        <p class="spec-value text-orange">8 lần</p>
+                        <p class="spec-desc">zoom chất lượng quang học</p>
+                    </div>
+                    <div class="spec-block mt-medium">
+                        <p class="spec-label">Tất cả</p>
+                        <p class="spec-value text-orange">48MP</p>
+                        <p class="spec-desc">camera phía sau</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="description-text mx-auto mt-large text-center text-gray">
+                Trên toàn bộ hệ thống camera của iPhone 17 Pro, bạn sẽ tìm thấy sự đổi mới tuyệt vời. Tele có thiết kế tetraprism thế hệ tiếp theo của chúng tôi và cảm biến lớn hơn 56%. Với tiêu cự tương đương 200 mm, zoom chất lượng quang học 8x khiến đây <span
+                    class="text-white font-bold"> là iPhone Telephoto dài nhất từ trước đến nay - cung cấp tổng phạm vi zoom quang học 16x.</span>
+                 Vì vậy, bạn có thể khám phá phạm vi lựa chọn sáng tạo rộng hơn nữa và thêm phạm vi tiếp cận lâu hơn cho các tác phẩm của mình.
+
+            <div class="focal-image-wrapper mt-large text-center">
+                <img id="focal-image" src="../ip17/images/100mm__b0gky74liqb6_large_2x.jpg" alt="Camera Sample" class="mx-auto rounded-box" style="transition: opacity 0.2s ease;">
+                <div class="focal-selector mt-small">
+                    <button class="focal-btn"
+                        data-image="../ip17/images/200mm__b8j6610sgpma_large_2x.jpg">200 mm</button>
+                    <button class="focal-btn active"
+                        data-image="../ip17/images/100mm__b0gky74liqb6_large_2x.jpg">100 mm</button>
+                    <button class="focal-btn"
+                        data-image="../ip17/images/48mm__bcnb2zqpydr6_large_2x.jpg">48 mm</button>
+                    <button class="focal-btn"
+                        data-image="../ip17/images/35mm__gcr9ng5exueu_large_2x.jpg">35 mm</button>
+                    <button class="focal-btn"
+                        data-image="../ip17/images/24mm__eyyrr19ky7ee_large_2x.jpg">24 mm</button>
+                    <button class="focal-btn"
+                        data-image="../ip17/images/13mm__cn8a4mew7a2q_large_2x.jpg">13 mm</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section video-section text-center mt-large">
+            <p class="accent-text">Video chuyên nghiệp</p>
+            <h2 class="headline-huge mt-small">Bất kỳ chuyên gia<br>inào nữa và nó sẽ<br>cần một trợ lý.</h2>
+
+            <div class="video-image-wrapper mt-large position-relative">
+                <img src="../ip17/images/Ảnh màn hình 2026-03-31 lúc 12.05.14.png" alt="Pro Video"
+                    class="mx-auto rounded-box">
+            </div>
+
+            <p class="description-text mx-auto mt-large text-gray">
+                Từ phim gia đình đến sản xuất Hollywood, iPhone 17 Pro sẵn sàng đối mặt với mọi thử thách. Với  <span
+                    class="text-white font-bold"> nhiều tính năng quay video chuyên nghiệp hơn bao giờ hết </span> — như tính năng ổn định video nâng cao, thông số kỹ thuật cấp rạp chiếu phim và khả năng tương thích với quy trình làm việc tiêu chuẩn trong ngành — iPhone 17 Pro đặt các công cụ làm phim mạnh mẽ trong tầm tay, bất cứ nơi nào bạn cần.
+            </p>
+        </section>
+
+        <!-- ===== ALL IN THE FAMILY ===== -->
+        <section class="section family-section text-center" id="family">
+            <p class="accent-text">All in the family</p>
+            <h2 class="headline-huge mt-small">Tất cả những thứ phải có.<br>Tất cả trên iPhone.</h2>
+
+            <div class="family-phones-wrap mt-large">
+                <img src="images/Gemini_Generated_Image_wyx5y6wyx5y6wyx5-2.png" alt="iPhone 17 Pro Max features" class="family-phones-img" />
+            </div>
+
+            <p class="family-desc mx-auto mt-medium text-gray">
+                Các mẫu iPhone mới nhất được trang bị nhiều khả năng tiên tiến. Các tính năng hữu ích của Apple Intelligence như trí thông minh thị giác13 và Công cụ viết giúp cuộc sống hàng ngày của bạn dễ dàng hơn. Kết nối nhanh, an toàn với
+                <strong class="text-white">Wi-Fi 7,<sup>14</sup> Bluetooth 6, 5G connectivity,<sup>15</sup> and
+                    eSIM.<sup>16</sup></strong>
+                Và các tính năng an toàn như Tin nhắn qua vệ tinh17 được thiết kế để giúp bạn yên tâm.
+            </p>
+        </section>
+
+        <!-- ===== CHIP COMPARE ===== -->
+        <section class="section compare-section" id="compare">
+            <div class="compare-box">
+                <div class="compare-header">
+                    <span class="compare-label">Compare with</span>
+                    <div class="compare-select-wrap">
+                        <select class="compare-select" id="compare-select">
+                            <option value="ip14pro">iPhone 14 Pro</option>
+                            <option value="ip15pro">iPhone 15 Pro</option>
+                            <option value="ip16pro">iPhone 16 Pro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="compare-stats">
+                    <div class="stat-item">
+                        <p class="stat-label">Up to</p>
+                        <p class="stat-value" id="stat-cpu">40% faster</p>
+                        <p class="stat-desc">6-core CPU</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-label">Up to</p>
+                        <p class="stat-value" id="stat-gpu">2x faster</p>
+                        <p class="stat-desc">6-core GPU</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-label">Up to</p>
+                        <p class="stat-value" id="stat-pro">10 more hours</p>
+                        <p class="stat-desc">video playback on iPhone 17 Pro<sup>11</sup></p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-label">Up to</p>
+                        <p class="stat-value" id="stat-promax">16 more hours</p>
+                        <p class="stat-desc">video playback on iPhone 17 Pro Max<sup>11</sup></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BATTERY LIFE ===== -->
+        <section class="section battery-section" id="battery">
+            <div class="battery-grid">
+                <div class="battery-text">
+                    <h2 class="headline-huge">Tuổi thọ pin.<br>Mức cao nhất mọi thời đại.</h2>
+                    <p class="battery-desc mt-medium text-gray">
+                        Thiết kế bên trong mới tạo thêm không gian đáng kể cho dung lượng pin, mang đến cho iPhone 17 Pro Max thời lượng pin iPhone tốt nhất từ trước đến nay,11 và tăng lên đến 4 giờ mỗi lần sạc đầy so với iPhone 15 Pro Max. Từ phát lại video mở rộng đến làm việc sau giờ làm việc, nó luôn sẵn sàng làm thêm giờ.
+                    </p>
+                </div>
+                <div class="battery-image">
+                    <img src="../ip17/images/battery__fnlwe1uwg66a_xlarge_2x.png" alt="iPhone 17 Pro Max - Battery Life"
+                        class="battery-phone-img" />
+                </div>
+            </div>
+            <div class="battery-stats">
+                <div class="battery-stat">
+                    <p class="bstat-label">Up to</p>
+                    <p class="bstat-value">33 hours</p>
+                    <p class="bstat-desc">video playback on iPhone 17 Pro<sup>11</sup></p>
+                </div>
+                <div class="battery-stat">
+                    <p class="bstat-label">Up to</p>
+                    <p class="bstat-value">39 hours</p>
+                    <p class="bstat-desc">video playback on iPhone 17 Pro Max<sup>11</sup></p>
+                </div>
+                <div class="battery-stat">
+                    <p class="bstat-label">Up to</p>
+                    <p class="bstat-value">50% charge<br>in 20 minutes</p>
+                    <p class="bstat-desc">with high-wattage power adapter<sup>12</sup></p>
+                </div>
+            </div>
+        </section>
+     <footer class="footer" id="lien-he">
+
+        <div class="footer-separator"></div>
+
+         <div class="footer-content">
+         <h2> ATECHZ</h2>
+         <p>
+          Mang đến cho bạn những sản phẩm công nghệ tiên tiến nhất từ các thương
+          hiệu hàng đầu thế giới. Nâng tầm trải nghiệm số của bạn.
+         </p>
+        <div class="footer-info">
+           <p>📍 273 An Dương Vương, phường Chợ Quán, TPHCM</p>
+           <p>📞 0365921305</p>
+          <p>📧 contact@ATechZ.vn</p>
+        </div>
+         <p class="footer-copy">© 2025ATechZ. No copyright.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Video -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="close-video" onclick="closeVideoModal()">&times;</span>
+            <div class="video-container">
+                <video id="localVideoPlayer" controls>
+                    <!-- Nguồn video sẽ được đặt bằng JavaScript -->
+                    <source src="" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ thẻ video.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+    <style>
+        /* FAMILY */
+        .family-section {
+            padding: 80px 0 60px;
+        }
+
+        .family-phones-wrap {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .family-phones-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .family-desc {
+            font-size: 19px;
+            line-height: 1.65;
+            max-width: 680px;
+        }
+
+        /* COMPARE */
+        .compare-section {
+            padding: 0 0 80px;
+        }
+
+        .compare-box {
+            background: #111;
+            border-radius: 28px;
+            padding: 52px 56px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .compare-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 44px;
+        }
+
+        .compare-label {
+            font-size: 17px;
+            color: var(--text-gray);
+        }
+
+        .compare-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-white);
+            border: 1.5px solid rgba(255, 255, 255, 0.22);
+            border-radius: 24px;
+            padding: 8px 40px 8px 18px;
+            font-size: 15px;
+            font-family: var(--font-main);
+            cursor: pointer;
+            outline: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+        }
+
+        .compare-select option {
+            background: #1c1c1e;
+        }
+
+        .compare-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: clamp(18px, 2.2vw, 30px);
+            font-weight: 700;
+            color: var(--text-white);
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        .stat-desc {
+            font-size: 13px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* BATTERY */
+        .battery-section {
+            padding: 80px 0;
+        }
+
+        .battery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 44px;
+        }
+
+        .battery-desc {
+            font-size: 17px;
+            line-height: 1.65;
+            max-width: 420px;
+        }
+
+        .battery-image {
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .battery-phone-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .battery-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1100px;
+            margin: 48px auto 0;
+            padding: 48px 44px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bstat-label {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 4px;
+        }
+
+        .bstat-value {
+            font-size: clamp(20px, 2.5vw, 32px);
+            font-weight: 700;
+            color: var(--accent-orange);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 6px;
+        }
+
+        .bstat-desc {
+            font-size: 13px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+        .site-footer {
+            background: #111;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 48px 44px;
+            margin-top: 40px;
+        }
+
+        .footer-inner {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .footer-notes {
+            font-size: 12px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 20px;
+        }
+
+        .footer-links-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .footer-links-row a {
+            font-size: 12px;
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .footer-links-row a:hover {
+            color: #fff;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        @media (max-width: 768px) {
+            .compare-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .compare-box {
+                padding: 32px 20px;
+            }
+
+            .battery-grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+
+            .battery-stats {
+                grid-template-columns: 1fr;
+                padding: 32px 20px 0;
+            }
+
+            .site-footer {
+                padding: 32px 20px;
+            }
+        }
+
+        /* Styles for Closer Look section */
+        .interactive-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr; /* Menu on the left, image on the right */
+            gap: 40px;
+            align-items: center;
+        }
+
+        .feature-image-container {
+            background: transparent;
+            border-radius: 24px;
+            padding: 40px;
+            height: 600px; /* Give it a fixed height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #feature-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .interactive-layout {
+                grid-template-columns: 1fr; /* Stack on mobile */
+            }
+            .feature-image-container {
+                height: 400px; /* Adjust height for mobile */
+            }
+        }
+    </style>
+
+    <script src="17.js"></script>
+    <script>
+        // ==================== HIỂN THỊ VIDEO MODAL ====================
+        function openVideoModal(videoPath) {
+            const modal = document.getElementById("videoModal");
+            const video = document.getElementById("localVideoPlayer");
+
+            if (modal && video) {
+                modal.classList.add("active");
+                video.src = videoPath;
+                video.load();
+                video.play();
+            }
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById("videoModal");
+            const video = document.getElementById("localVideoPlayer");
+
+            if (modal && video) {
+                modal.classList.remove("active");
+                video.pause();
+                video.currentTime = 0;
+            }
+        }
+
+        // Đóng modal khi click ra ngoài vùng video
+        document.getElementById('videoModal')?.addEventListener('click', function(e) {
+            if (e.target === this) closeVideoModal();
+        });
+
+        // Compare dropdown logic
+        const compareData = {
+            ip14pro: { cpu: '40% faster', gpu: '2x faster', pro: '10 more hours', promax: '16 more hours' },
+            ip15pro: { cpu: '20% faster', gpu: '50% faster', pro: '6 more hours', promax: '10 more hours' },
+            ip16pro: { cpu: '10% faster', gpu: '30% faster', pro: '3 more hours', promax: '5 more hours' }
+        };
+        const sel = document.getElementById('compare-select');
+        if (sel) {
+            sel.addEventListener('change', () => {
+                const d = compareData[sel.value];
+                document.getElementById('stat-cpu').textContent = d.cpu;
+                document.getElementById('stat-gpu').textContent = d.gpu;
+                document.getElementById('stat-pro').textContent = d.pro;
+                document.getElementById('stat-promax').textContent = d.promax;
+            });
+        }
+    </script>
+</body>
+
+</html>

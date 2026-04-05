@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPhone 17 Technical Specifications</title>
+  <style>
+    /* NỀN ĐEN SÂU (DARK MODE) */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      /* Nền đen có ánh gradient nhẹ ở góc để kính có chiều sâu xuyên thấu */
+      background: #000000;
+      background-image: radial-gradient(circle at 15% 0%, #1c1c24 0%, #000000 60%);
+      background-attachment: fixed;
+      color: #ffffff; /* Đổi toàn bộ chữ sang trắng */
+      line-height: 1.6;
+    }
+
+    /* NAVBAR - LIQUID GLASS DARK MODE */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      background: rgba(30, 30, 30, 0.5); /* Kính tối màu */
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-brand {
+      font-size: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .back-btn {
+      font-size: 14px;
+      font-weight: 500;
+      color: #2997ff; /* Đổi màu xanh sáng hơn cho Dark mode */
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .back-btn:hover {
+      text-decoration: underline;
+      color: #64b5f6;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* BỐ CỤC CONTAINER */
+    .specs-container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px; 
+    }
+
+    /* THẺ KÍNH (GLASS CARD) - CHUẨN MẪU CONTROL CENTER */
+    .spec-row {
+      display: flex;
+      flex-wrap: nowrap;
+      background: rgba(255, 255, 255, 0.08); /* Kính trắng siêu mỏng trên nền đen */
+      backdrop-filter: blur(35px);
+      -webkit-backdrop-filter: blur(35px);
+      border: 1px solid rgba(255, 255, 255, 0.15); /* Viền sáng như khối pha lê */
+      border-radius: 28px;
+      padding: 40px;
+      /* Đổ bóng sâu để mảng kính nổi bật lên khỏi nền đen */
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+      overflow: hidden; 
+    }
+
+    .spec-row:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* CỘT TRÁI (TIÊU ĐỀ) - CĂN GIỮA VÀ TRUNG TÂM */
+    .spec-label {
+      flex: 0 0 25%;
+      font-size: 24px;
+      font-weight: 600;
+      color: #ffffff;
+      display: flex;
+      justify-content: center; /* Căn giữa ngang */
+      align-items: center; /* Căn trung tâm dọc */
+      text-align: center;
+      padding-right: 20px;
+      box-sizing: border-box;
+    }
+
+    /* CỘT PHẢI (NỘI DUNG) */
+    .spec-value {
+      flex: 1;
+      font-size: 16px;
+      color: #e5e5ea; /* Trắng xám nhạt chống mỏi mắt */
+      box-sizing: border-box;
+      display: flex;
+    }
+
+    /* BỐ CỤC 1: DỌC (Hình trên, chữ dưới) - Dùng cho Finish, Buttons, Apps */
+    .layout-col {
+      flex-direction: column;
+      align-items: flex-start; /* Ép toàn bộ hình và chữ bám sát lề trái */
+      gap: 30px; 
+    }
+    .layout-col > div {
+      width: 100%;
+      text-align: left;
+    }
+
+    /* BỐ CỤC 2: NGANG (Hình trái, chữ phải) - Dùng cho Display, Chip, Camera */
+    .layout-row {
+      flex-direction: row;
+      align-items: stretch; /* Đảm bảo khối hình và chữ kéo dài bằng nhau */
+      gap: 50px; /* Tăng khoảng cách giữa hình và chữ cho thoáng */
+    }
+
+    /* TINH CHỈNH TỶ LỆ HÌNH ẢNH TO ĐẸP HƠN */
+    .spec-value img {
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+    
+    /* Căn chỉnh ảnh Finish nhỏ gọn lại và bám lề trái */
+    .img-finish { 
+      max-width: 100%; 
+      width: 50%; /* Bỏ width 100% để hình tự động thu vừa kích thước và ôm lề */
+      align-self: flex-start; /* Ép khối hình bám chặt lề trái */
+      object-fit: contain;
+      object-position: left top; 
+    } 
+
+    /* Dùng height: 0 và min-height: 100% để ép hình KHÔNG tự làm phình to row, mà tuân thủ tuyệt đối chiều cao của văn bản (khít cạnh trên/dưới) */
+    .img-display { flex: 0 0 25%; max-width: 25%; height: 0; min-height: 100%; object-fit: cover; object-position: center; } 
+    .img-chip { flex: 0 0 30%; max-width: 30%; height: 0; min-height: 50%; object-fit: cover; object-position: center; } 
+    .img-camera { flex: 0 0 20%; max-width: 40%; height: 0; min-height: 50%; object-fit: cover; object-position: center; } 
+    
+    /* Buttons & Apps nằm giữa */
+    .img-wide { 
+      max-width: 100%; 
+      width: 100%; 
+      align-self: center; 
+    }
+
+    /* Định dạng Text */
+    .spec-value ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .spec-value li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .spec-value li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #86868b;
+      font-size: 1.2em;
+      line-height: 1;
+    }
+
+    .spec-value strong {
+      color: #ffffff;
+      font-size: 17px;
+    }
+
+    /* RESPONSIVE CHO ĐIỆN THOẠI */
+    @media (max-width: 768px) {
+      .specs-container { margin: 30px auto; gap: 20px; }
+      .spec-row { flex-direction: column; padding: 30px; gap: 20px; }
+      .spec-label { flex: 1 1 100%; font-size: 20px; padding-right: 0; margin-bottom: 10px; justify-content: flex-start; }
+      .spec-value { flex-direction: column; gap: 20px; }
+      .layout-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .img-display, .img-chip, .img-camera, .img-wide, .img-finish { max-width: 100%; height: auto; min-height: auto; align-self: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="../user/index.html#page-iphone" class="back-btn">← Trang trước</a>
+      iPhone 17
+    </div>
+    <div class="nav-links">
+      <a href="overview.html">Overview</a>
+    </div>
+  </nav>
+
+  <div class="specs-container">
+
+    <div class="spec-row">
+      <div class="spec-label">Finish</div>
+      <div class="spec-value layout-col">
+        <img src="./img  ip17/ip17 Finish.png" alt="iPhone 17 Colors" class="img-finish">
+        <div>
+          <p><strong>Black, White, Mist Blue, Sage, Lavender</strong></p>
+          <ul>
+            <li>Aluminum design</li>
+            <li>Ceramic Shield 2 front</li>
+            <li>Color‑infused glass back (Black, Mist Blue, Sage, Lavender)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="spec-row">
+      <div class="spec-label">Capacity</div>
+      <div class="spec-value">
+        <ul>
+          <li>256GB</li>
+          <li>512GB</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="spec-row">
+      <div class="spec-label">Display</div>
+      <div class="spec-value layout-row">
+        <img src="./img  ip17/ip17 Display.png" alt="Display Screen" class="img-display">
+        <div>
+          <ul>
+            <li><strong>Super Retina XDR display</strong></li>
+            <li>6.3‑inch (diagonal) all‑screen OLED display</li>
+            <li>2622‑by‑1206-pixel resolution at 460 ppi</li>
+            <li>Dynamic Island</li>
+            <li>Always-On display</li>
+            <li>ProMotion technology with adaptive refresh rates up to 120Hz</li>
+            <li>HDR display</li>
+            <li>True Tone</li>
+            <li>Wide color (P3)</li>
+            <li>1000 nits max brightness (typical); 1600 nits peak brightness (HDR); 3000 nits peak brightness (outdoor)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="spec-row">
+      <div class="spec-label">Chip</div>
+      <div class="spec-value layout-row">
+        <img src="./img  ip17/ip17 Chip.png" alt="A19 Chip" class="img-chip">
+        <div>
+          <ul>
+            <li><strong>A19 chip</strong></li>
+            <li>6‑core CPU with 2 performance and 4 efficiency cores</li>
+            <li>5‑core GPU with Neural Accelerators</li>
+            <li>16‑core Neural Engine</li>
+            <li>Hardware-accelerated ray tracing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="spec-row">
+      <div class="spec-label">Camera</div>
+      <div class="spec-value layout-row">
+        <img src="./img  ip17/ip17 Camera Control.png" alt="Camera" class="img-camera">
+        <div>
+          <ul>
+            <li><strong>48MP Dual Fusion camera system</strong></li>
+            <li>48MP Fusion Main: 26 mm, ƒ/1.6 aperture, sensor-shift optical image stabilization</li>
+            <li>48MP Fusion Ultra Wide: 13 mm, ƒ/2.2 aperture and 120° field of view</li>
+            <li>2x optical zoom in, 2x optical zoom out; 4x optical zoom range</li>
+            <li>Sapphire crystal lens cover</li>
+            <li>Next-generation portraits with Focus and Depth Control</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="spec-row">
+      <div class="spec-label">External Buttons and Connectors</div>
+      <div class="spec-value layout-col">
+        <img src="./img  ip17/ip17 Buttons and Connectors.png" alt="Buttons and Connectors" class="img-wide">
+      </div>
+    </div>
+
+    <div class="spec-row">
+      <div class="spec-label">Built-in Apps</div>
+      <div class="spec-value layout-col">
+        <img src="./img  ip17/ip17 Built-in Apps.png" alt="Built-in Apps" class="img-wide">
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

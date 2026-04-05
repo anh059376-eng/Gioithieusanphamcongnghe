@@ -1,0 +1,288 @@
+/* ================= Biến màu sắc & Font ================= */
+:root {
+    --bg-light: #f5f5f7;
+    --bg-dark: #000000;
+    --bg-blue: #dbeafe; /* Xanh nhạt của iPad */
+    --text-light-theme: #1d1d1f;
+    --text-dark-theme: #f5f5f7;
+    --text-gray: #86868b;
+    --btn-blue: #000000;
+    --btn-blue-hover: #707070;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ================= Nút bấm (Buttons) ================= */
+.cta-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+    z-index: 10;
+    position: relative;
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background-color: var(--btn-blue);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-blue-hover);
+}
+
+.btn-outline {
+    border: 1px solid var(--btn-blue);
+    color: var(--btn-blue);
+}
+
+.btn-outline:hover {
+    background-color: var(--btn-blue);
+    color: #fff;
+}
+
+.btn-outline-dark {
+    border: 1px solid var(--btn-blue);
+    color: var(--btn-blue);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--btn-blue);
+    color: #fff;
+}
+
+.btn-white {
+    background-color: #fff;
+    color: var(--text-light-theme);
+    font-weight: 600;
+}
+
+/* ================= Các khối Hero (Full Width) ================= */
+.hero-section {
+    position: relative;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.light-bg {
+    background-color: var(--bg-light);
+    color: var(--text-light-theme);
+}
+
+.dark-bg {
+    background-color: var(--bg-dark);
+    color: var(--text-dark-theme);
+}
+
+.blue-bg {
+    background-color: var(--bg-blue);
+    color: var(--text-light-theme);
+}
+
+.content-wrapper {
+    text-align: center;
+    padding-top: 54px;
+    z-index: 2;
+    position: relative;
+}
+
+.headline {
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+}
+
+.subhead {
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.note {
+    font-size: 14px;
+    color: var(--text-gray);
+    margin-top: 4px;
+}
+
+/* Vị trí hình ảnh */
+.image-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+}
+
+.bottom-center {
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.center-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.top-center {
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+/* ================= Lưới sản phẩm (Bento Grid 2 cột) ================= */
+.promo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 12px;
+    margin-bottom: 12px;
+}
+
+.promo-card {
+    position: relative;
+    height: 550px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headline-small {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+}
+
+.subhead-small {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* Biến thể cho thẻ lưới */
+.promo-card .bottom-text {
+    padding-top: 0;
+    position: absolute;
+    bottom: 40px;
+}
+
+.signature-font {
+    font-size: 32px;
+    font-family: cursive; /* Placeholder cho font chữ ký */
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .promo-grid {
+        grid-template-columns: 1fr; /* Trở về 1 cột trên điện thoại */
+    }
+}
+
+/* ================= Khối Apple TV+ (Carousel) ================= */
+.tv-carousel {
+    position: relative;
+    padding: 0 12px 24px 12px;
+}
+
+.slide {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.slide-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #fff;
+}
+
+.slide-desc {
+    font-size: 18px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding: 0 24px;
+}
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    margin: 0 auto; /* Đẩy ra giữa */
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #d2d2d7;
+}
+
+.dot.active {
+    background-color: #1d1d1f;
+}
+
+.play-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #d2d2d7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1d1d1f;
+}

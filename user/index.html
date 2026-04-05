@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Haine TechStore - Cửa hàng thiết bị công nghệ hàng đầu" />
+  <title> TechZ - Giới thiệu sản phẩm công nghệ</title>
+  <link rel="icon" type="image/png" href="../img/lohu.png" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="maincontent.css" />
+  <link rel="stylesheet" href="product.css" class="style" />
+  <link rel="stylesheet" href="giohang.css" class="style" />
+  <link rel="stylesheet" href="../style.css" />
+
+  <link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css" />
+
+  <!--web hiện thị chuẩn trên đth và máy tính bảng-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <!--Thư viện hiệu ứng động-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!--Thư viện biểu tượng icon-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <!-- Logo -->
+    <div class="hamburger">
+      <a href="#home">
+        <img onclick="LoadPage(pagehome)" src="../img/lohu.png" alt="Logo web" />
+      </a>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navcenter">
+      <ul class="quickbox1 menu">
+        <li class="quickbox-text">
+          <a onclick="LoadPage(pagehome)">Trang chủ</a>
+        </li>
+        <li class="quickbox-text">
+          <a onclick="LoadPage(pageproseries)">Mac</a>
+        </li>
+        <li class="quickbox-text">
+          <a onclick="LoadPage(pageiphone)">iPhone</a>
+        </li>
+        <li class="quickbox-text">
+          <a onclick="LoadPage(pageipad)">iPad</a>
+        </li>
+        <li class="quickbox-text">
+          <a onclick="LoadPage(pageairpods)">AirPods</a>
+        </li>
+        <li class="quickbox-text">
+          Sản phẩm ▾
+          <ul class="submenu">
+            <li>
+              <a onclick="LoadPage(pageproducts)">Tất cả sản phẩm</a>
+            </li>
+            <li>
+              <a onclick="LoadPage(pagehome)" href="#bestseller">Sản phẩm bán chạy</a>
+            </li>
+            <li>
+              <a onclick="LoadPage(pagehome)" href="#bestseller">Sản phẩm mới</a>
+            </li>
+          </ul>
+        </li>
+        <li class="quickbox-text">
+          <a href="#lien-he">Liên hệ</a>
+        </li>
+        <li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <div class="search-wrapper">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+
+        <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm...">
+      </div>
+    </div>
+    <!-- Quick Actions -->
+    <div class="nav">
+      <ul class="quickbox">
+        <li class="quickbox-item cart-icon-wrapper" id="iconCart">
+          <i class="bxr bx-cart" id="openCart"></i>
+          <span class="cart-badge" id="cart-badge">0</span>
+        </li>
+        <li class="quickbox-item" onclick="openMenu()">
+          <i class="bxr bx-user"></i>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Sidebar trượt ra bên phải -->
+  <div class="thanhcongcu" id="thanhcongcu">
+    <div class="thanhcongcu-content">
+      <h2>TÍNH NĂNG</h2>
+      <hr />
+      <ul>
+        <li id="loginItem"><a id="openLogin">Đăng nhập/Đăng ký</a></li>
+        <li id="profileItem">
+          <a id="OpenProfile" onclick="LoadPage(pageprofile); loadProfile()">Thông tin tài khoản</a>
+        </li>
+        <li id="ordersItem">
+          <a id="openOrders" onclick="LoadPage(pagehistory)">Đơn đặt hàng</a>
+        </li>
+        <li id="logoutItem"><a id="logoutBtn">Đăng xuất</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Overlay mờ nền cho sidebar -->
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+  <!-- Trang Chủ -->
+  <main class="page-content" id="page-home">
+    <!-- Hero Banner -->
+    <section class="banner" id="home">
+
+      <div class="banner-content">
+        <h1>ATechZ</h1>
+        <h2><big>Nơi giới thiệu và cung cấp các thiết bị công nghệ hiện đại,<br> chất lượng độc quyền đến từ
+            Apple!</big></h2>
+        <a href="#product-section">
+          <button type="button">XEM NGAY</button>
+        </a>
+      </div>
+    </section>
+
+    <section class="hero-section light-bg">
+      <div class="content-wrapper">
+        <h1 class="headline">iPhone</h1>
+        <h2 class="subhead">Gặp gỡ thế hệ iPhone mới nhất.</h2>
+        <div class="cta-links">
+          <a href="#" class="btn btn-primary" onclick="LoadPage(pageiphone); return false;">Tìm hiểu thêm</a>
+          <a href="#" class="btn btn-outline"
+            onclick="LoadPage(pageproducts); setTimeout(() => { setActiveCategoryTab('Điện thoại'); document.getElementById('productSearch').value = 'iPhone'; searchProducts(); }, 100); return false;">Mua
+            sắm iPhone</a>
+        </div>
+      </div>
+      <div class="image-wrapper bottom-center">
+        <img src="../img/danhsachspdientu/nền1 trang chủ.png" alt="iPhone" style="max-width: 700px; height: auto;" />
+      </div>
+    </section>
+
+    <section class="hero-section light-bg">
+      <div class="content-wrapper">
+        <h1 class="headline">MacBook Neo</h1>
+        <h2 class="subhead">Mac tuyệt vời. Giá bất ngờ.</h2>
+        <p class="note">Theo dõi để biết khi có hàng</p>
+        <div class="cta-links">
+          <button class="btn btn-primary" onclick="LoadPage(pageproseries);">Tìm hiểu thêm</button>
+          <button class="btn btn-outline" onclick="LoadPage(pageproducts); setTimeout(() => filterByCategory('Mac'), 100);">Xem giá</button>
+        </div>
+      </div>
+      <div class="image-wrapper bottom-center">
+        <img src="../img/danhsachspdientu/nền2trang chủ.png" alt="MacBook Neo"
+          style="max-width: 600px; height: auto;" />
+      </div>
+    </section>
+
+    <section class="hero-section blue-bg">
+      <div class="content-wrapper">
+        <h1 class="headline">iPad Air</h1>
+        <h2 class="subhead">Nay siêu mạnh mẽ với M4.</h2>
+        <p class="note">Theo dõi để biết khi có hàng</p>
+        <div class="cta-links">
+          <button class="btn btn-primary" onclick="LoadPage(pageipad);">Tìm hiểu thêm</button>
+          <button class="btn btn-outline" onclick="LoadPage(pageproducts); setTimeout(() => { document.getElementById('productSearch').value = 'iPad'; searchProducts(); }, 100);">Xem giá</button>
+        </div>
+      </div>
+      <div class="image-wrapper bottom-center">
+        <img src="../img/danhsachspdientu/nên3trangchu.png" alt="iPad Air" style="max-width: 600px; height: auto;" />
+      </div>
+    </section>
+
+    <section class="promo-grid">
+      <div class="promo-card dark-bg">
+        <div class="content-wrapper">
+          <h3 class="headline-small">Studio Display XDR</h3>
+          <p class="subhead-small">Thánh chuốt pixel.</p>
+        </div>
+        <div class="image-wrapper bottom-center">
+          <img src="../img/wwdc26-sf-motion-still-last-large-p1_2x.jpg" alt="Studio Display XDR" />
+        </div>
+      </div>
+
+      <div class="promo-card light-bg">
+        <div class="image-wrapper center-center">
+          <img src="../img/nền4tao.png" alt="50 Years Logo" />
+        </div>
+        <div class="content-wrapper bottom-text">
+          <p class="signature-font">50 Years of Thinking Different.</p>
+        </div>
+      </div>
+      <div class="promo-card dark-bg">
+        <div class="content-wrapper">
+          <h3 class="headline-small">MacBook Pro</h3>
+          <p class="subhead-small"> M5, M5 Pro và M5 Max.</p>
+        </div>
+        <div class="image-wrapper bottom-center">
+          <img src="../img/nền6 mac.png" alt="MacBook Pro" />
+        </div>
+      </div>
+
+      <div class="promo-card light-bg">
+        <div class="content-wrapper">
+          <h3 class="headline-small">iPhone 17 <span class="magichromatic-text">Magichromatic</span></h3>
+          <p class="subhead-small">Thậm chí còn thú vị hơn.<br>Thậm chí còn bền hơn.</p>
+        </div>
+        <div class="image-wrapper bottom-center">
+          <img class="iphone-box-promo-image"
+            src="../img/danhsachspdientu/TRAINGHIEM/modal_packaging__bscmhs9fjdhy_large_2x.jpg" alt="Hộp iPhone" />
+        </div>
+      </div>
+    </section>
+
+    <!-- DANH MỤC SẢN PHẨM -->
+    <section class="product-section" id="product-section">
+      <h2 class="title">DANH MỤC SẢN PHẨM</h2>
+
+      <div class="splide" id="productSlider">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide product-item" onclick="LoadPage(pageproducts); setTimeout(() => { document.getElementById('productSearch').value = 'iPhone'; searchProducts(); }, 100);">
+              <img src="../img/danhsachspdientu/ip17.jpg" alt="Iphone" />
+              <strong>Iphone</strong>
+            </li>
+            <li class="splide__slide product-item" onclick="LoadPage(pageproducts); setTimeout(() => filterByCategory('Mac'), 100);">
+              <img src="../img/danhsachspdientu/Mac.jpeg" alt="Mac" />
+              <strong>Mac</strong>
+            </li>
+            <li class="splide__slide product-item" onclick="LoadPage(pageproducts); setTimeout(() => { document.getElementById('productSearch').value = 'iPad'; searchProducts(); }, 100);">
+              <img src="../img/danhsachspdientu/ipad.jpeg" alt="iPad" />
+              <strong>iPad</strong>
+            </li>
+            <li class="splide__slide product-item" onclick="LoadPage(pageproducts); setTimeout(() => { document.getElementById('productSearch').value = 'AirPods'; searchProducts(); }, 100);">
+              <img src="../img/danhsachspdientu/airpods.png" alt="AirPods" />
+              <strong>AirPods</strong>
+          </ul>
+        </div>
+      </div>
+
+      <button type="button" class="view-all" onclick="LoadPage(pageproducts)">
+        XEM TẤT CẢ
+      </button>
+    </section>
+
+    <!--Tổng quan -->
+
+    <h2 class="slider-main-title">Đặc điểm của các sản phẩm nhà Apple</h2>
+    <section class="splide overview-slider-section" id="home-slider" aria-label="Tổng quan">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="overview-content">
+              <h3>Thời lượng pin đáng kinh ngạc</h3>
+              <p>Tận hưởng thời gian sử dụng lên đến 18 giờ cho một lần sạc, giúp bạn làm việc và giải trí không gián
+                đoạn.</p>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="overview-content">
+              <h3>Màn hình Liquid Retina XDR</h3>
+              <p>Trải nghiệm hình ảnh sống động, màu sắc chân thực và độ sáng vượt trội với công nghệ màn hình tiên tiến
+                nhất.</p>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="overview-content">
+              <h3>Hệ sinh thái Apple</h3>
+              <p>Kết nối liền mạch giữa iPhone, Mac, và Apple Watch. Nhận cuộc gọi và tin nhắn trên mọi thiết bị.</p>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="overview-content">
+              <h3>Thiết kế cao cấp</h3>
+              <p>Hoàn thiện từ những vật liệu bền bỉ và sang trọng, mang lại cảm giác cầm nắm chắc chắn và vẻ ngoài đẳng
+                cấp.</p>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="overview-content">
+              <h3>Bao bì thân thiện môi trường</h3>
+              <p>Chúng tôi cam kết sử dụng 100% vật liệu tái chế trong bao bì, hướng tới một tương lai bền vững.</p>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="overview-content">
+              <h3>Sạc nhanh và tiện lợi</h3>
+              <p>Công nghệ sạc nhanh MagSafe giúp bạn nạp đầy năng lượng cho thiết bị một cách nhanh chóng và an toàn.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Hot News / Bestsellers -->
+    <section class="bestseller" id="bestseller">
+      <div class="bestseller-full">
+        <h2 class="title">HOT NEWS</h2>
+        <div class="sanpham">
+          <!-- menu trái-->
+          <div class="menu-left">
+            <button type="button" id="bestban">Sản phẩm bán chạy</button>
+            <button type="button" id="newproduct">Sản phẩm mới</button>
+          </div>
+          <!-- menu phải - dùng js load ra -->
+          <div class="menu-right"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Trang mac -->
+  <main class="page-content hidden" id="page-proseries">
+    <section id="overview" class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 class="title-main">MacBook Neo</h1>
+          <span class="badge">16.490.000 ₫</span>
+          <p class="subtitle">MacBook Neo siêu mỏng nhẹ, sở hữu màn hình 13-inch sắc nét. Máy chạy chip A18 Pro, mỏng
+            nhẹ, pin khỏe, máy đáp ứng mượt mà mọi tác vụ học tập cơ bản.</p>
+          <div class="btn-group">
+            <button class="btn btn-primary btn-large"
+              onclick="LoadPage(pageproducts); setTimeout(() => filterByCategory('Mac'), 100);">Xem giá</button>
+            <button class="btn btn-text" onclick="openVideoModal()">
+              Watch the film
+              <span class="material-symbols-outlined">play_circle</span>
+            </button>
+          </div>
+        </div>
+        <div class="hero-image-wrap">
+          <div class="glow-bg"></div>
+          <img src="../img/danhsachspdientu/macneo.jpg" alt="Macneo" class="hero-img">
+        </div>
+      </div>
+    </section>
+    <div class="giua">
+      <h2>Hiệu năng</h2>
+      <h1><br><b>Sẵn sàng</b><br><b>cân mọi tất bật.</b></h1>
+      <p>
+        Chip A18 Pro giúp bạn chạy các ứng dụng hay dùng, chạy xuyên các tác vụ hàng ngày nhanh như bay, thỏa sức sáng
+        tạo và chơi các game hành động. Nhờ đó mà ngày có tất bật cỡ nào, bạn cũng có thể nhanh chóng hoàn tất mọi việc.
+      </p>
+    </div>
+
+    <section class="feature section bg-light">
+      <div class="container feature-grid">
+        <div class="feature-image-box">
+          <img src="../img/danhsachspdientu/TÁch nền .png" alt="Processor Macneo" class="Brilliant Display">
+        </div>
+        <div class="feature-text">
+          <h2 class="title-green">Hiệu Năng Vượt trội</h2>
+          <p>Năng suất mỗi ngày. Trả lời email, nhận cuộc gọi video, lướt web, cập nhật lịch sau giờ học, chia sẻ ảnh –
+            hoàn thành danh sách việc cần làm của bạn với MacBook Neo.</p>
+          <div class="feature-highlight">
+            <span class="material-symbols-outlined">light_mode</span>
+            16 giờ
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature section">
+      <div class="container feature-grid align-end">
+        <div class="feature-text">
+          <h2 class="title-large">Chinh phục<br> các khóa học.</h2>
+          <p>MacBook Neo là thiết bị hoàn hảo để học tập, cho dù bạn đang vùi đầu chuẩn bị cho kỳ thi cuối kỳ, sử dụng
+            Apple Intelligence để tóm tắt ghi chú trên lớp3 hay tạo bài thuyết trình.</p>
+        </div>
+        <div class="feature-image-box">
+          <img src="../img/danhsachspdientu/performance_hero_2_static__eyt6d992mbau_large_2x-Photoroom.png"
+            alt="Processor" class="offset-img">
+        </div>
+      </div>
+    </section>
+    <section class="feature section bg-light">
+      <div class="container feature-grid">
+        <div class="feature-image-box">
+          <img src="../img/danhsachspdientu/performance_hero_3_static__dzg6zb7h18a6_large_2x-Photoroom.png"
+            alt="Processor Macneo" class="Brilliant Display">
+        </div>
+        <div class="feature-text">
+          <h2 class="title-green">Làm như chơi.</h2>
+          <p>Từ tạo bảng tính đến quản lý bảng lương, MacBook Neo đều hoàn thành tốt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thanh trượt hình ảnh -->
+    <h2 class="slider-main-title">Đặc điểm nổi bật</h2>
+    <section class="splide image-slider-section" id="image-slider" aria-label="Hình ảnh nổi bật">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <h3 class="slide-feature-title">Bạc, Hồng Phớt, Vàng Citrus và Xanh Indigo. Bốn màu tuyệt đẹp.</h3>
+            <img src="../img/danhsachspdientu/highlights_colors__b33i3trd6mxe_large_2x.jpg" alt="Ảnh 1">
+          </li>
+          <li class="splide__slide">
+            <h3 class="slide-feature-title">Thiết kế mỏng nhẹ</h3>
+            <img src="../img/danhsachspdientu/macbook-neo-color-select-202603-citrus-256gb_AV1.webp" alt="Ảnh 2">
+          </li>
+          <li class="splide__slide">
+            <h3 class="slide-feature-title">tạo ra trải nghiệm nghe 3D khi thưởng thức âm nhạc</h3>
+            <img src="../img/danhsachspdientu/macbook-neo-color-select-202603-citrus-256gb_AV2.webp" alt="Ảnh 3">
+          </li>
+          <li class="splide__slide">
+            <h3 class="slide-feature-title">Cấu hình đa dạng</h3>
+            <img src="../img/danhsachspdientu/macbook-neo-specs-options-select-202603-citrus.webp" alt="Ảnh 4">
+          </li>
+          <li class="splide__slide">
+            <h3 class="slide-feature-title">Thời lượng pin bền bỉ</h3>
+            <img src="../img/danhsachspdientu/TRAINGHIEM/highlights_battery__fu65vu9o4te2_large_2x.jpg" alt="Ảnh 5">
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <section id="specs" class="specs section bg-gray">
+      <div class="container">
+        <div class="specs-header">
+          <h2>Thông số kỹ thuật</h2>
+          <p>Every detail meticulously engineered to deliver the world's most versatile professional tool.</p>
+        </div>
+
+        <div class="specs-grid">
+          <div class="spec-card">
+            <span class="material-symbols-outlined icon">memory</span>
+            <h4>A18 Pro</h4>
+            <p>6 nhân CPU, 5 nhân GPU</p>
+          </div>
+          <div class="spec-card">
+            <span class="material-symbols-outlined icon">storage</span>
+            <h4>Memory</h4>
+            <p>256GB hoặc 512GB SSD</p>
+          </div>
+          <div class="spec-card">
+            <span class="material-symbols-outlined icon">battery_charging_full</span>
+            <h4>Battery</h4>
+            <p> Pin 36.5Wh, USB-c</p>
+          </div>
+          <div class="spec-card">
+            <span class="material-symbols-outlined icon">wifi</span>
+            <h4>Connectivity</h4>
+            <p>Wi-Fi 6E (802.11ax), Bluetooth 6</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Trang Iphone Mới -->
+  <main class="page-content hidden" id="page-iphone">
+    <nav class="chapter-nav">
+      <div class="nav-container">
+        <h1 class="page-title">iPhone</h1>
+        <div class="nav-items">
+          <div class="nav-item"><a href="../ip17/ip17promax.html"><img src="../img/danhsachspdientu/Iphone/nav_iphone_17pro__b8rt659h2ogi_large_2x.png"
+              alt="17 Pro"></a><span>iPhone 17 Pro Max</span></div>
+          <div class="nav-item"><a href="#iphone-air-design"><img src="../img/danhsachspdientu/Iphone/nav_iphone_air__f066mfdfhi62_large_2x.png"
+              alt="Air"></a><span>iPhone Air</span></div>
+          <div class="nav-item"><a href="../ip17t/overview.html"><img src="../img/danhsachspdientu/Iphone/nav_iphone_17__bx67weh1ur5y_large_2x.png"
+              alt="17"></a><span>iPhone 17</span></div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-content-iphone">
+      <section class="section lineup-section">
+        <div class="section-header">
+          <h2 class="section-title">Khám phá các dòng sản phẩm mới nhất.</h2>
+        </div>
+
+        <div class="lineup-grid">
+          <div class="lineup-card">
+            <div class="card-image-box bg-dark">
+              <img id="img-iphone-17-pro" src="../img/danhsachspdientu/Iphone/IP17/iphone-compare-iphone-17-pro-202509.png" alt="iPhone 17 Pro" style="transition: 0.3s ease; cursor: pointer;" onclick="window.location.href='../ip17/ip17promax.html'">
+            </div>
+            <div class="color-dots">
+              <span class="dot bg-orange" onclick="document.getElementById('img-iphone-17-pro').src='../img/danhsachspdientu/Iphone/IP17/17cam.png'"></span>
+              <span class="dot bg-Deep Blue" onclick="document.getElementById('img-iphone-17-pro').src='../img/danhsachspdientu/Iphone/IP17/17xanh.png'"></span>
+              <span class="dot bg-white" onclick="document.getElementById('img-iphone-17-pro').src='../img/danhsachspdientu/Iphone/IP17/17trangmoi.png'"></span>
+            </div>
+            <h3 class="card-title">iPhone 17 Pro</h3>
+            <p class="card-desc">Thiết kế đột phá mang lại hiệu năng tối ưu và thời lượng pin lâu dài.</p>
+            <p class="card-price">Từ 29.000.000đ hoặc 1.000.204đ/Tháng.<br>Trong 24 tháng.</p>
+            <div class="card-actions">
+              <button class="btn btn-blue"
+                onclick="LoadPage(pageproducts); setTimeout(() => { setActiveCategoryTab('Iphone'); document.getElementById('productSearch').value = 'Iphone 17 Pro Max'; searchProducts(); }, 100);">Mua</button>
+            </div>
+          </div>
+
+          <div class="lineup-card">
+            <div class="card-image-box bg-blue">
+              <a href="#iphone-air-design">
+                <img id="img-iphone-air" src="../img/danhsachspdientu/Iphone/IP AIR/xanhmoiw.png" alt="iPhone Air" style="cursor: pointer; max-width: 200px; height: auto;">
+              </a>
+            </div>
+            <div class="color-dots">
+              <span class="dot bg-white outline" onclick="document.getElementById('img-iphone-air').src='../img/danhsachspdientu/Iphone/IP AIR/trắngmoi.png'"></span>
+              <span class="dot bg-blue" onclick="document.getElementById('img-iphone-air').src='../img/danhsachspdientu/Iphone/IP AIR/xanhmoiw.png'"></span>
+              <span class="dot bg-dark" onclick="document.getElementById('img-iphone-air').src='../img/danhsachspdientu/Iphone/IP AIR/đenmoi.png'"></span>
+            </div>
+            <h3 class="card-title">iPhone Air</h3>
+            <p class="card-desc">Chiếc iPhone mỏng nhất từ ​​trước đến nay. Với sức mạnh của một sản phẩm chuyên nghiệp
+              bên trong.</p>
+            <p class="card-price">Từ 26.000.278đ hoặc 1.098.814đ/Tháng.<br>Trong 24 tháng.</p>
+            <div class="card-actions">
+              <button class="btn btn-blue"
+                onclick="LoadPage(pageproducts); setTimeout(() => { setActiveCategoryTab('Iphone'); document.getElementById('productSearch').value = 'Iphone Air'; searchProducts(); }, 100);">Mua</button>
+            </div>
+          </div>
+
+          <div class="lineup-card">
+            <div class="card-image-box bg-purple">
+              <a href="../ip17t/overview.html">
+                <img id="img-iphone-17" src="../img/danhsachspdientu/Iphone/IP17/xoánen17nn.png" alt="iPhone 17" style="max-width: 600px; height: auto;">
+              </a>
+            </div>
+            <div class="color-dots">
+              <span class="dot bg-purple" onclick="document.getElementById('img-iphone-17').src='../img/danhsachspdientu/Iphone/IP17/ip17-trắng.png'"></span>
+              <span class="dot bg-green" onclick="document.getElementById('img-iphone-17').src='../img/danhsachspdientu/Iphone/IP17/iphone-17-finish-select-202509-sage_AV1-Photoroom.png'"></span>
+              <span class="dot bg-dark" onclick="document.getElementById('img-iphone-17').src='../img/danhsachspdientu/Iphone/IP17/ip17-đen.png'"></span>
+            </div>
+            <h3 class="card-title">iPhone 17</h3>
+            <p class="card-desc">Là một chiếc iPhone tuyệt vời nhất. Thậm chí còn rất bền hơn.</p>
+            <p class="card-price">Từ 21.017.695đ hoặc 875.698đ/Tháng.<br>Trong 24 tháng.</p>
+            <div class="card-actions">
+              <button class="btn btn-blue"
+                onclick="LoadPage(pageproducts); setTimeout(() => { setActiveCategoryTab('Iphone'); document.getElementById('productSearch').value = 'Iphone 17'; searchProducts(); }, 100);">Mua</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section design-highlight text-center" id="iphone-air-design">
+        <p class="subtitle"><b>iPhone Air</b></p>
+        <h2 class="title-large">Là một chiếc iPhone mang lại <br><span class="text-gray">cảm giác tương lai.</span></h2>
+
+        <div class="design-image mt-large">
+          <img src="../img/danhsachspdientu/hero_design__capuizdf0uuu_large_2x-Photoroom.png"
+            alt="Hand holding iPhone Air" class="mx-auto" style="transform: translateX(-150px);">
+        </div>
+
+        <p class="design-text">
+          iPhone Air với thiết kế hoàn toàn mới<strong> mỏng và nhẹ</strong> đến mức gần như biến mất trong lòng bàn tay
+          bạn. Với độ dày 5,6 mm và trọng lượng chỉ 165 gram,5 đây là chiếc iPhone mỏng nhất từ ​​trước đến nay — ngay
+          cả khi sở hữu màn hình lớn 6,5 inch sống động6 và sức mạnh của chip A19 Pro. Đó là một nghịch lý mà bạn phải
+          cầm trên tay mới tin được.
+        </p>
+      </section>
+
+      <section class="section feature-explorer">
+        <div class="feature-layout">
+          <div class="feature-list">
+            <button class="feature-btn active"><span class="icon"></span> Colors</button>
+            <button class="feature-btn"><span class="icon">+</span> Titanium frame</button>
+            <button class="feature-btn"><span class="icon">+</span> Innovative internal design</button>
+            <button class="feature-btn"><span class="icon">+</span> Immersive pro display</button>
+            <button class="feature-btn"><span class="icon">+</span> Ceramic Shield</button>
+            <button class="feature-btn"><span class="icon">+</span> Camera Control</button>
+          </div>
+          <div class="feature-image">
+            <img src="../img/danhsachspdientu/Iphone/initial__fawwxxx0sday_large_2x.png" alt="iPhone Design Detail"
+              style="max-width: 125%; height: auto; transform: translateX(-100px);">
+          </div>
+        </div>
+      </section>
+
+      <section class="section magic-section">
+        <div class="section-header">
+          <h2 class="section-title">Đặc điểm nổi bật.</h2>
+        </div>
+
+        <div class="magic-grid">
+          <div class="magic-card">
+            <img src="../img/danhsachspdientu/Iphone/IP AIR/camera_control__evag1t2apriq_large_2x.jpg"
+              alt="Liquid Glass" class="magic-img">
+            <p class="magic-text"><strong>Điều Khiển Camera.</strong> Chụp ảnh hoàn hảo siêu nhanh.</p>
+          </div>
+          <div class="magic-card">
+            <img src="../img/danhsachspdientu/Iphone/photographic_styles__e7i543isan42_large_2x.jpg" alt="Lock Screen"
+              class="magic-img">
+            <p class="magic-text"><strong>Phong Cách Nhiếp Ảnh thế hệ mới nhất.</strong> Chọn từ các phong cách cài đặt
+              sẵn khác nhau, bao gồm tùy chọn Sáng mới, để tùy chỉnh tông, màu sắc và diện mạo của ảnh chụp.
+              Chụp ảnh thiếu sáng và chế độ Ban Đêm. Với cảm biến lớn và khẩu độ nhanh, hệ thống camera Fusion tiên tiến
+              trên iPhone Air giúp bạn chụp được nhiều chi tiết hơn và làm ảnh sáng hơn, kể cả khi trời tối. Video Pro.
+              Quay video lên đến 4K ở tốc độ 60 fps hoặc bật Chế Độ Hành Động để quay video với độ ổn định ấn tượng.
+              Ngoài ra, tính năng Hòa Âm còn giúp bạn điều chỉnh cách giọng nói phát ra trong video.</p>
+          </div>
+          <div class="magic-card">
+            <img src="../img/danhsachspdientu/Iphone/IP AIR/NĂM NGANG.jpg" alt="ảnh ip đồ hoạ" class="magic-img">
+            <p class="magic-text"><strong>Hiệu năng và thời lượng pin.</strong> iPhone Air được thiết kế để mang lại
+              hiệu năng pro trong thiết kế iPhone mỏng nhất từng có.
+              Kết hợp sức mạnh của Apple silicon thế hệ mới nhất và khả năng tiết kiệm điện của chip A19 Pro,
+              các tính năng tiên tiến như Dọn Dẹp trong ứng dụng Ảnh,
+              Apple Intelligence hoặc chơi game yêu cầu cao về đồ họa đều diễn ra mượt mà và dễ dàng.</p>
+            <div style="display: flex; justify-content: space-around; margin-top: 25px; color: #1d1d1f;">
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <span class="material-symbols-outlined" style="font-size: 36px;">memory</span>
+                <span style="font-size: 14px; font-weight: 600;">Chip A19 Pro</span>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <span class="material-symbols-outlined" style="font-size: 36px;">developer_board</span>
+                <span style="font-size: 14px; font-weight: 600;">Chip N1</span>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <span class="material-symbols-outlined" style="font-size: 36px;">cell_tower</span>
+                <span style="font-size: 14px; font-weight: 600;">Modem C1X</span>
+              </div>
+            </div>
+          </div>
+          <div class="magic-card">
+            <img src="../img/danhsachspdientu/Iphone/IP AIR/highlights_rear_camera__fwea7ndmxeq2_large_2x.jpg"
+              alt="Hold Assist" class="magic-img">
+            <p class="magic-text"><strong>Camera 48MP Fusion Main.</strong>Hai camera tiên tiến trong một. Độ phân giải
+              siêu cao là mặc định. </p>
+          </div>
+      </section>
+      <section class="section design-highlight text-center">
+        <h2 class="title-large">Camera trước 18MP Center Stage. <br><span class="text-gray">Đưa căn chỉnh khung hình lên
+            đẳng cấp mới.</span></h2>
+        <p class="subtitle mx-auto" style="max-width: 800px;">Camera trước mới mang đến cho bạn những cách linh hoạt để
+          căn chỉnh khung hình khi chụp ảnh và quay video – và hơn thế nữa. Chạm để mở rộng trường ảnh và xoay từ khung
+          hình dọc sang khung hình ngang<strong> mà không cần di chuyển iPhone.</strong> Và khi bạn bè góp mặt vào khung
+          hình, trường ảnh sẽ mở rộng để ghi hình được nhiều người hơn trong ảnh selfie.</p>
+        <div class="design-image mt-large">
+          <img src="../img/danhsachspdientu/Iphone/IP AIR/image-Photoroom.png" alt="Hand holding iPhone Air">
+        </div>
+
+        <p class="design-text">
+          Cảm biến vuông hoàn toàn mới hỗ trợ các tùy chọn thu phóng và xoay, mang lại thêm nhiều cách linh hoạt để chụp
+          selfie và quay video. Và tự động thu hết hình ảnh mọi người vào khung hình khi chụp nhóm.
+        </p>
+      </section>
+      <section class="section design-highlight text-center">
+        <h2 class="title-large">Đây là camera <br><span class="text-gray">được cả thế giới ưa chuộng.</span></h2>
+
+        <div class="design-image mt-large">
+          <img src="../img/danhsachspdientu/Iphone/IP AIR/camera__gl56mvovq6qi_large_2x-Photoroom.png"
+            alt="Hand holding iPhone Air">
+        </div>
+
+        <p class="design-text">
+          Với hơn một thập kỷ đổi mới phần cứng và phần mềm, iPhone đã trở thành máy ảnh được yêu thích nhất thế giới.
+          iPhone Air tiếp tục di sản này với hệ thống camera 48MP Fusion mạnh mẽ hoạt động giống như nhiều camera tiên
+          tiến trong một. Chụp ở độ phân giải siêu cao 48MP để có chi tiết tối đa hoặc 24MP theo mặc định, hoặc sử dụng
+          Telephoto 2x tích hợp để phóng to với chất lượng đặc biệt rõ nét.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Trang Airpods -->
+  <main class="page-content hidden" id="page-airpods">
+    <nav class="category-nav">
+      <div class="container nav-icons">
+        <a href="javascript:void(0)" class="nav-item"
+          onclick="LoadPage(pageproducts); setTimeout(() => filterByCategory('Airpods'), 100);">
+          <span class="material-symbols-outlined">earbuds</span>
+          <span>AirPods</span>
+        </a>
+        <a href="javascript:void(0)" class="nav-item"
+          onclick="LoadPage(pageproducts); setTimeout(() => filterByCategory('Airpods'), 100);">
+          <span class="material-symbols-outlined">earbuds_battery</span>
+          <span>AirPods Pro</span>
+        </a>
+        <a href="javascript:void(0)" class="nav-item"
+          onclick="LoadPage(pageproducts); setTimeout(() => filterByCategory('Airpods'), 100);">
+          <span class="material-symbols-outlined">headphones</span>
+          <span>AirPods Max</span>
+          <span class="badge-new">Mới</span>
+        </a>
+        <a href="javascript:void(0)" class="nav-item"
+          onclick="LoadPage(pageproducts); setTimeout(() => filterByCategory('Airpods'), 100);">
+          <span class="material-symbols-outlined">compare_arrows</span>
+          <span>So Sánh</span>
+        </a>
+        <a href="javascript:void(0)" class="nav-item"
+          onclick="LoadPage(pageproducts); setTimeout(() => filterByCategory('Phụ kiện'), 100);">
+          <span class="material-symbols-outlined">cable</span>
+          <span>Phụ Kiện</span>
+        </a>
+
+      </div>
+    </nav>
+
+    <div class="promo-banner">
+      <p>Mua AirPods Pro 3, tặng 3 tháng sử dụng Apple Fitness+ và Apple Music miễn phí. <a href="#">Mua &gt;</a></p>
+    </div>
+
+    <div class="airpods-main-content">
+
+      <section class="product-section">
+        <div class="product-card">
+          <div class="product-content center-text">
+            <h1 class="product-title-large">AirPods Max 2</h1>
+          </div>
+          <div class="product-image-container">
+            <img src="../img/danhsachspdientu/airpods/airpods_max_black__x3byrd2venmu_large_2x.png" alt="AirPods Max 2"
+              class="product-img">
+          </div>
+          <div class="product-footer">
+            <div class="product-info">
+              <p class="product-desc">Các tính năng thông minh mới.<br>Trải nghiệm nghe sống động hơn.</p>
+              <p class="product-price">14.999.000đ</p>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-primary btn-small" onclick="LoadPage(pageproducts); setTimeout(() => { setActiveCategoryTab('Airpods'); document.getElementById('productSearch').value = 'AirPods Max2'; searchProducts(); }, 100);">Mua</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-section">
+        <div class="product-card">
+          <div class="product-image-container">
+            <img src="../img/danhsachspdientu/airpods/Tách nềnairpods pro3.png" alt="AirPods Pro 3"
+              class="product-img">
+          </div>
+          <div class="product-content left-text">
+            <h2 class="product-title">AirPods Pro 3</h2>
+            <p class="product-desc">Chủ Động Khử Tiếng Ồn tai bạn chưa từng nghe.</p>
+            <p class="product-price">6.799.000đ</p>
+          </div>
+          <div class="product-footer">
+            <div class="product-info">
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-outline"
+                onclick="LoadPage(pageproducts); setTimeout(() => { setActiveCategoryTab('Airpods'); document.getElementById('productSearch').value = 'AirPods Pro 3'; searchProducts(); }, 100);">Mua</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-section">
+        <div class="product-card full-width-card">
+          <div class="full-width-bg">
+            <img src="../img/danhsachspdientu/airpods/bento_case_open__63kccmu775u6_xlarge_2x.jpg"
+              alt="AirPods 4 Background" class="bg-img">
+          </div>
+          <div class="full-width-content">
+            <div class="text-group">
+              <h2 class="product-title" style="color: black;">AirPods 4</h2>
+              <p class="product-desc" style="color: black;">Đẹp biểu tượng. Hay phi thường.</p>
+              <p class="product-price">Từ 3.799.000đ <span class="price-sub">Với Chủ Động Khử Tiếng Ồn 4.999.000đ</span>
+              </p>
+            </div>
+            <div class="action-group">
+              <button class="btn btn-primary btn-small" onclick="LoadPage(pageproducts); setTimeout(() => { setActiveCategoryTab('Airpods'); document.getElementById('productSearch').value = 'AirPods 4'; searchProducts(); }, 100);">Mua</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="compare-section">
+        <div class="container">
+          <h2 class="section-title text-center">Các phiên bản<br>AirPods</h2>
+
+          <div class="compare-grid">
+            <div class="compare-item">
+              <img src="../img/danhsachspdientu/airpods/01.png" alt="AirPods 4">
+              <h3 class="compare-title">AirPods pro4</h3>
+              <p class="compare-desc">Bước đột phá về âm thanh và sự thoải mái.</p>
+              <p class="compare-price">3.799.000đ</p>
+              <button class="btn btn-primary btn-small" onclick="LoadPage(pageproducts); setTimeout(() => { setActiveCategoryTab('Airpods'); document.getElementById('productSearch').value = 'AirPods pro4'; searchProducts(); }, 100);">Mua</button>
+            </div>
+
+            <div class="compare-item">
+              <img src="../img/danhsachspdientu/airpods/02.png" alt="AirPods 4">
+              <h3 class="compare-title">AirPods 4</h3>
+              <p class="compare-sub-title">Chủ Động Khử Tiếng Ồn</p>
+              <p class="compare-desc">Bước đột phá về âm thanh, sự thoải mái và khả năng kiểm soát tiếng ồn.</p>
+              <p class="compare-price">4.999.000đ</p>
+              <button class="btn btn-primary btn-small" onclick="LoadPage(pageproducts); setTimeout(() => { setActiveCategoryTab('Airpods'); document.getElementById('productSearch').value = 'AirPods 4'; searchProducts(); }, 100);">Mua</button>
+            </div>
+
+            <div class="compare-item">
+              <img src="../img/danhsachspdientu/airpods/Tách nềnairpods pro3.png" alt="AirPods Pro 3">
+              <h3 class="compare-title">AirPods Pro 3</h3>
+              <p class="compare-desc">Chủ Động Khử Tiếng Ồn tai bạn chưa từng nghe, cùng cảm biến nhịp tim.</p>
+              <p class="compare-price">6.799.000đ</p>
+              <button class="btn btn-primary btn-small" onclick="LoadPage(pageproducts); setTimeout(() => { setActiveCategoryTab('Airpods'); document.getElementById('productSearch').value = 'AirPods Pro 3'; searchProducts(); }, 100);">Mua</button>
+            </div>
+
+            <div class="compare-item">
+              <img src="../img/danhsachspdientu/airpods/04.png" alt="AirPods Max 2">
+              <span class="badge-new text-orange">Mới</span>
+              <h3 class="compare-title">AirPods Max 2</h3>
+              <p class="compare-desc">Một trải nghiệm nghe riêng tư với tai nghe dạng chụp.</p>
+              <p class="compare-price">14.999.000đ</p>
+              <button class="btn btn-primary btn-small" onclick="LoadPage(pageproducts); setTimeout(() => { setActiveCategoryTab('Airpods'); document.getElementById('productSearch').value = 'AirPods Max2'; searchProducts(); }, 100);">Mua</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Trang iPad -->
+  <main class="page-content hidden" id="page-ipad">
+    <div class="sticky-nav-wrapper">
+      <nav class="local-nav">
+        <div class="nav-container">
+          <div class="nav-title">iPad Air</div>
+        </div>
+      </nav>
+    </div>
+
+    <section class="section hero-section bg-light-blue text-center">
+      <div class="product-logo">
+        <span class="font-bold">iPad</span><span class="font-italic text-gradient">air</span>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <img src="../img/danhsachspdientu/nên3trangchu.png" alt="iPad Air" class="mx-auto float-image"
+          style="max-width: 450px; width: 100%; height: auto;">
+      </div>
+
+      <div class="hero-actions mt-large">
+        <h2 class="headline-large text-dark-blue mb-medium">Bây giờ được tăng cường bởi M4</h2>
+        <button class="btn btn-medium" onclick="LoadPage(pageproducts); setTimeout(() => { document.getElementById('productSearch').value = 'iPad'; searchProducts(); }, 100);">Mua</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Nhận những điểm nổi bật.</h2>
+        <a href="#" class="link-blue" onclick="openVideoModal('../img/video2.mp4')">Watch the film<span
+            class="material-symbols-outlined icon-small">play_circle</span></a>
+      </div>
+
+      <div class="highlights-grid mt-medium">
+        <div class="bento-card bg-light-gray">
+          <div class="card-content top-left">
+            <p class="text-medium font-bold">Trí thông minh của Apple. Sáng tạo,<br>giao tiếp và hoàn thành công việc
+              một<br>cách dễ dàng.</p>
+          </div>
+          <img src="../img/danhsachspdientu/Ipad/imagewand__gkllb3mqol6y_large_2x-Photoroom.png"
+            alt="Apple Intelligence" class="card-img-cover mt-xlarge">
+        </div>
+
+        <div class="bento-card bg-light-gray">
+          <div class="card-content top-left">
+            <p  class="text-medium font-bold">iPadOS và các ứng dụng tuyệt vời cho<br>phép bạn hoàn thành công việc
+              theo trực quan.</p>
+          </div>
+          <img src="../img/danhsachspdientu/Ipad/Gemini_Generated_Image_kp8la5kp8la5kp8l-2.png" alt="iPadOS"
+            class="card-img-cover mt-xlarge">
+        </div>
+
+        <div class="bento-card bg-light-gray">
+           <div class="card-content top-right text-right">
+            <p class="text-medium font-bold">Magic Keyboard với một hàng chức<br>năng gồm 14 phím và bàn di
+              chuột<br>lớn. Apple Pencil Pro cho sự sáng tạo<br>ở cấp độ tiếp theo.</p>
+          </div>
+          <img src="../img/danhsachspdientu/Ipad/image-Photoroom.png" alt="Phụ kiện"
+            class="card-img-cover card-img-contain">
+        </div>
+
+        <div class="bento-card bg-white">
+          <div class="card-content bottom-right text-right">
+            <p class="text-medium font-bold">Có sẵn trong các phiên bản 11
+              inchvà<br>13 inch. Cả hai đều có màn hình<br>Liquid Retina tuyệt đẹp.</p>
+          </div>
+          <img src="../img/danhsachspdientu/Ipad/ipad_air_blue__btrcc5x4t6j6_large_2x-Photoroom.png"
+            alt="Kích thước iPad" class="card-img-cover object-right" style="max-width: 450px; height: auto;">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section M4 -->
+    <section class="section m4-section text-center">
+      <h2 class="chip-title"><span class="apple-icon"></span>M4</h2>
+      <h3 class="headline-huge text-dark-blue mb-large">Tăng <br> sức mạnh.</h3>
+
+      <div class="game-image-wrapper">
+        <img src="../img/danhsachspdientu/Ipad/writingtools__ceu22eq1102q_large_2x-Photoroom.png" alt="giao diện"
+          class="mx-auto rounded-image">
+      </div>
+    </section>
+
+    <!-- Section Hãy nhìn kỹ hơn -->
+    <section class="ipad-closer-look-section section">
+      <div class="closer-look-layout">
+        <!-- Cột trái: 30% -->
+        <div class="closer-look-left">
+          <h2 class="section-title">Hãy nhìn kỹ hơn.</h2>
+          <p class="closer-look-desc">Thiết kế tinh tế, hiệu năng vượt trội hãy khám phá từng chi tiết của iPad Air.</p>
+        </div>
+
+        <!-- Cột phải: 70% -->
+        <div class="closer-look-right">
+          <div class="splide" id="ipad-closer-look-slider" aria-label="Hãy nhìn kỹ hơn">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <div class="bento-card bg-white">
+                    <img src="../img/danhsachspdientu/Ipad/slide_2B__dvqfqwnkj2c2_large_2x.jpg" alt="Các màu iPad Air"
+                      class="card-img-padded">
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="bento-card bg-white">
+                    <img src="../img/danhsachspdientu/Ipad/slide_3A__e9d8j4i6akii_large_2x-Photoroom.png"
+                      alt="Bàn phím cận cảnh" class="card-img-padded">
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="bento-card bg-white">
+                    <img src="../img/danhsachspdientu/Ipad/1.2.jpg" alt="Độ mỏng" class="card-img-padded">
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="bento-card bg-white">
+                    <img src="../img/danhsachspdientu/Ipad/2.2.jpg" alt="Màn hình" class="card-img-padded">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Chip M4 - Hiệu năng -->
+    <section class="ipad-feature-section ipad-m4-perf-section">
+      <div class="ipad-feature-text-block">
+        <div class="ipad-m4-headline">
+          <h2 class="ipad-m4-title"><span class="ipad-m4-apple">&#63743;</span>M4.</h2>
+          <p class="ipad-m4-subtitle">Power up, up, up.</p>
+        </div>
+        <p class="ipad-feature-body">Chip M4 nhanh như chớp với bộ nhớ hệ thống thống nhất tăng 50% <strong>giúp nâng
+            cao hiệu suất</strong> cho mọi việc bạn thích làm trên iPad Air. Đó là một cường quốc AI, cho phép các tính
+          năng và khả năng AI mà bạn sử dụng hàng ngày để hoàn thành công việc nhanh hơn, dễ dàng hơn. Và kiến trúc GPU
+          mang đến đồ họa tiên tiến mượt mà hơn cho dù bạn đang làm việc, phát trực tuyến, sáng tạo hay chơi game. Tất
+          cả đều có hiệu suất đáng kinh ngạc cho thời lượng pin cả ngày.</p>
+      </div>
+      <div class="ipad-feature-img-block">
+        <img src="../img/danhsachspdientu/Ipad/Gemini_Generated_Image_b5ztmb5ztmb5ztmb-Photoroom.png" alt="iPad Air M4"
+          class="ipad-feature-img">
+      </div>
+    </section>
+
+    <!-- Section Hiệu suất so sánh -->
+    <section class="ipad-perf-stats-section">
+      <div class="ipad-perf-stat">
+        <span class="ipad-perf-label">Lên đến</span>
+        <h2 class="ipad-perf-number">Nhanh hơn 2,3 lần</h2>
+        <span class="ipad-perf-sub">hơn iPad Air với M15</span>
+      </div>
+      <div class="ipad-perf-divider"></div>
+      <div class="ipad-perf-stat">
+        <span class="ipad-perf-label">Kết thúc</span>
+        <h2 class="ipad-perf-number">Nhanh hơn gấp 4 lần</h2>
+        <span class="ipad-perf-sub">Kết xuất 3D chuyên nghiệp với khả năng dò tia hơn iPad Air với M16</span>
+      </div> 
+    </section>
+
+    <!-- Section iPadOS & Apps -->
+    <section class="ipad-os-section">
+      <div class="ipad-os-headline">
+        <h2 class="ipad-os-title">iPadOS và các ứng dụng.<br><span class="ipad-os-title-blue">Bay ngay qua tất
+            cả.</span></h2>
+      </div>
+      <div class="ipad-os-image-block">
+        <img src="../img/danhsachspdientu/Ipad/ipad_air_starlight__bsd3afgeoij6_large_2x-2-Photoroom.png" alt="iPadOS và ứng dụng"
+          class="ipad-os-img">
+      </div>
+      <div class="ipad-os-text-block">
+        <p class="ipad-feature-body">iPadOS 18 giới thiệu Liquid Glass, một thiết kế mới tuyệt đẹp với giao diện rực rỡ
+          và những cải tiến thay đổi cuộc chơi giúp nâng <strong>năng suất</strong> của iPad Air <strong>lên một tầm cao
+            mới</strong>. Một hệ thống cửa sổ trực quan, được thiết kế tưởng lại mang lại cho bạn sức mạnh và sự linh
+          hoạt hơn bao giờ hết. Chạy các ứng dụng chuyên nghiệp, chơi các trò chơi hiệu suất cao và thực hiện các dự án
+          sáng tạo ở mọi quy mô với trải nghiệm tự nhiên, cảm ứng đầu tiên.</p>
+      </div>
+    </section>
+
+    <!-- Section Apple Intelligence -->
+    <section class="ipad-ai-section">
+      <h2 class="ipad-ai-title">
+        <span class="ipad-ai-gradient">Trí thông minh của<br>Apple.</span><br>
+        <span class="ipad-ai-dark">Dễ dàng hữu ích mỗi ngày.</span>
+      </h2>
+      <p class="ipad-ai-body">iPad Air được xây dựng cho Apple Intelligence, hệ thống trí thông minh cá nhân giúp bạn
+        <strong>sáng tạo, giao tiếp và hoàn thành công việc một cách dễ dàng</strong>. Với các biện pháp bảo vệ quyền
+        riêng tư đột phá, bạn có thể yên tâm rằng không ai khác có thể truy cập dữ liệu của bạn - kể cả Apple.
+      </p>
+    </section>
+  </main>
+
+  <!-- Trang Sản Phẩm -->
+  <main class="page-content hidden" id="page-products">
+    <section class="products-page">
+      <h1>SẢN PHẨM</h1>
+      <!-- Tìm kiếm & Lọc -->
+      <div class="product-filters">
+        <!-- Tìm kiếm cơ bản -->
+        <div class="search-box">
+          <div class="search-input-wrapper">
+            <input type="text" id="productSearch" placeholder="Tìm kiếm sản phẩm..." />
+            <div class="search-suggestions" id="searchSuggestions"></div>
+          </div>
+          <button onclick="searchProducts()">
+            <i class="bx bx-search"></i>
+          </button>
+        </div>
+
+        <!-- Nút Toggle Tìm kiếm nâng cao -->
+        <button class="toggle-advanced">
+          <i class="bx bx-filter"></i> Tìm kiếm nâng cao
+        </button>
+
+        <!-- Tìm kiếm nâng cao (ẩn mặc định) -->
+        <div class="advanced-search" id="advancedSearch">
+          <div class="filter-group">
+            <label>Phân loại:</label>
+            <select id="categoryFilter">
+              <!-- Options sẽ được load tự động từ JavaScript -->
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Khoảng giá:</label>
+            <div class="price-range">
+              <input type="number" id="minPrice" placeholder="Từ (VND)" min="0" />
+              <span>-</span>
+              <input type="number" id="maxPrice" placeholder="Đến (VND)" min="0" />
+            </div>
+          </div>
+
+          <button class="apply-filter" onclick="applyAdvancedFilter()">
+            <i class="bx bx-check"></i> Áp dụng
+          </button>
+        </div>
+      </div>
+
+      <!-- Phân loại nhanh -->
+      <div class="category-tabs" id="categoryTabs">
+        <!-- Category tabs sẽ được load tự động từ JavaScript -->
+      </div>
+
+      <!-- Kết quả tìm kiếm -->
+      <div class="search-result" id="searchResult"></div>
+
+      <!-- Lưới sản phẩm -->
+      <div class="product-grid" id="productGrid">
+        <!-- Sản phẩm được render qua từ js -->
+      </div>
+      <!-- Phân trang -->
+      <div class="pagination" id="pagination">
+        <!-- Pagination buttons -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Chi tiết sản phẩm -->
+  <div class="product-modal" id="productModal">
+    <div class="modal-overlay" onclick="closeProductModal()"></div>
+    <div class="modal-container">
+      <span class="close-modal" onclick="closeProductModal()">&times;</span>
+      <div class="modal-body" id="modalBody">
+        <!-- Chi tiết sản phẩm sẽ được load vào đây bằng JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Trang Giỏ Hàng -->
+  <main class="page-content hidden" id="page-cart">
+    <div class="cart-page-header">
+      <h1><i class="i-cart"></i> GIỎ HÀNG</h1>
+      <div class="cart-user-info">
+        <span id="cart-user-display"></span>
+      </div>
+    </div>
+    <div class="cart-container">
+      <ul class="cart-list" id="cart-list"></ul>
+      <div class="cart-action-buttons">
+        <button class="cart-btn-secondary" onclick="LoadPage(pageproducts)">
+          <i class="i-back"></i> Tiếp tục mua hàng
+        </button>
+        <button class="cart-btn-confirm" onclick="chuyenDenThanhToan()">
+          Tiến hành thanh toán
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Trang Thanh Toán -->
+  <main class="page-content hidden" id="page-checkout">
+    <div class="checkout-page-header">
+      <h1><i class="i-card"></i> THANH TOÁN</h1>
+    </div>
+    <div class="checkout-container">
+      <div class="checkout-address-section">
+        <h3>Địa chỉ giao hàng</h3>
+        <div class="checkout-address-list" id="checkout-address-list"></div>
+        <button class="checkout-btn-secondary" onclick="hienThiFormDiaChiMoi()">
+          <i class="i-add"></i> Thêm địa chỉ mới
+        </button>
+        <div class="checkout-new-address-form" id="checkout-new-address-form" style="display: none">
+          <h4>Nhập địa chỉ mới</h4>
+          <div class="checkout-form-group">
+            <label>Họ tên người nhận</label>
+            <input type="text" id="checkout-new-name" placeholder="VD: Nguyễn Văn An" />
+          </div>
+          <div class="checkout-form-group">
+            <label>Số điện thoại</label>
+            <input type="text" id="checkout-new-phone" placeholder="VD: 0384937738" />
+          </div>
+          <div class="checkout-form-group">
+            <label>Địa chỉ chi tiết</label>
+            <input type="text" id="checkout-new-address" placeholder="VD: 115 Đường ABC, phường 5, quận Bình Thạnh" />
+          </div>
+          <button class="checkout-btn-primary" onclick="luuDiaChiMoi()">
+            Lưu địa chỉ
+          </button>
+        </div>
+      </div>
+      <!--Phương thức thanh toán-->
+      <div class="checkout-address-section">
+        <h3>Phương thức thanh toán</h3>
+        <div class="checkout-payment-methods">
+          <label class="checkout-payment-method selected">
+            <input type="radio" name="checkout-payment" value="cod" checked />
+            <i class="i-cash"></i>
+            <span>Tiền mặt khi nhận hàng</span>
+          </label>
+          <label class="checkout-payment-method">
+            <input type="radio" name="checkout-payment" value="transfer" />
+            <i class="i-bank"></i>
+            <span>Chuyển khoản ngân hàng</span>
+          </label>
+          <label class="checkout-payment-method">
+            <input type="radio" name="checkout-payment" value="online" />
+            <i class="i-card"></i>
+            <span>Thanh toán trực tuyến</span>
+          </label>
+        </div>
+      </div>
+      <!--Tổng tiền-->
+      <div class="checkout-order">
+        <h3>Tổng kết đơn hàng</h3>
+        <div class="checkout-row">
+          <span>Tổng tiền:</span>
+          <span id="checkout-subtotal">0đ</span>
+        </div>
+      </div>
+      <!--Nút hành động-->
+      <div class="checkout-action-buttons">
+        <button class="checkout-btn-secondary" onclick="LoadPage(pagecart)">
+          <i class="i-back"></i> Quay lại giỏ hàng
+        </button>
+        <button class="checkout-btn-confirm" onclick="xemLaiDonHang()">
+          Xem lại đơn hàng
+        </button>
+      </div>
+    </div>
+  </main>
+  <!--Xem lại đơn hàng-->
+  <main class="page-content hidden" id="page-review">
+    <div class="review-page-header">
+      <h1><i class="i-check"></i></h1>
+    </div>
+    <div class="review-content" id="order-review-content"></div>
+    <div class="review-action-buttons">
+      <button class="checkout-btn-secondary" onclick="LoadPage(pagecheckout)">
+        Quay lại trang thanh toán
+      </button>
+      <button class="checkout-btn-confirm" onclick="xacNhanDatHang()">
+        Xác nhận đặt hàng
+      </button>
+    </div>
+  </main>
+
+  <!--Đăng nhập-->
+  <div class="DangNhap" id="loginForm">
+    <div class="login-wrap">
+      <div class="login animate__animated animate__zoomIn">
+        <div class="titles">Đăng nhập</div>
+        <div class="divider"></div>
+        <form class="form">
+          <label class="label" for="username1">Tên đăng nhập</label>
+          <input class="input" id="username1" name="username1" type="text" placeholder="Nhập tên đăng nhập" required />
+          <p id="errorMsg" class="error-message"></p>
+          <label class="label" for="password">Mật khẩu</label>
+          <div class="password-row">
+            <input class="input" id="password" name="password" type="password" placeholder="Nhập mật khẩu" required />
+            <i class="fa-solid fa-eye-slash eyePassword"></i>
+          </div>
+          <p id="errorMsgPass" class="error-message"></p>
+          <div class="action-row">
+            <label class="remember">
+              <input type="checkbox" id="rememberMe" />Ghi nhớ
+            </label>
+          </div>
+          <button class="log-button" type="submit">Đăng nhập</button>
+          <p class="footers">
+            Nếu bạn chưa có tài khoản?
+            <button class="button" type="button" onclick="DangKy()">
+              Đăng ký ngay
+            </button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--ĐĂNG KÝ-->
+  <div class="DangNhap" id="DangKyOverlay">
+    <div class="login animate__animated animate__pulse" id="registerForm">
+      <div class="titles">Đăng ký tài khoản</div>
+      <div class="divider"></div>
+      <form class="form">
+        <label class="label" for="hoten">Họ và tên</label>
+        <input class="input" id="hoten" name="hoten" type="text" placeholder="Nhập họ và tên" required />
+        <label class="label" for="username">Tên tài khoản</label>
+        <input class="input" id="username" name="username" type="text" placeholder="Nhập tên tài khoản" required />
+        <p id="usernameError" class="error-message"></p>
+        <label class="label" for="email">Email</label>
+        <input class="input" id="email" name="email" type="email" placeholder="Nhập email" required />
+        <p id="emailError" class="error-message"></p>
+        <label class="label" for="sdt">Số điện thoại</label>
+        <input class="input" id="sdt" name="sdt" type="tel" placeholder="Nhập số điện thoại" required />
+        <p class="error-message" for="address"></p>
+        <label class="label">Địa chỉ</label>
+        <input class="input" id="address" name="address" type="text" placeholder="Nhập địa chỉ" required />
+        <label class="label" for="password">Mật khẩu</label>
+        <div class="password-row">
+          <input class="input" id="registerPassword" name="registerPassword" type="password" placeholder="Nhập mật khẩu"
+            required />
+          <i class="fa-solid fa-eye-slash eyePassword"></i>
+        </div>
+        <p class="error-message"></p>
+        <label class="label" for="registerConfirmPassword">Xác nhận mật khẩu</label>
+        <div class="password-row">
+          <input class="input" id="registerConfirmPassword" name="registerConfirmPassword" type="password"
+            placeholder="Xác nhận mật khẩu" required />
+          <i class="fa-solid fa-eye-slash eyePassword"></i>
+        </div>
+        <p id="confirmPass" class="error-message"></p>
+        <div class="box">
+          <div class="box1">
+            <label class="label" for="ngaysinh">Ngày sinh</label>
+            <input class="input-reg" id="ngaysinh" name="ngaysinh" type="date" required />
+          </div>
+          <div class="box1">
+            <label class="label" for="gioitinh">Giới tính</label>
+            <select class="input-reg" id="gioitinh" name="gioitinh" required>
+              <option value="">Chọn giới tính</option>
+              <option value="Nam">Nam</option>
+              <option value="Nữ">Nữ</option>
+              <option value="Khác">Khác</option>
+            </select>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <button class="log-button" type="submit">Đăng ký</button>
+        <p class="footers">
+          Bạn đã có tài khoản?
+          <button class="button" type="button" onclick="DangNhap()">
+            Đăng nhập
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
+  <!--Trang thông tin cá nhân-->
+  <main class="page-content hidden" id="page-profile">
+    <section class="profile-page">
+      <div class="profile-top">
+        <h1>Thông tin tài khoản</h1>
+      </div>
+      <div class="profile-container">
+        <!--Ảnh cá nhân-->
+        <div class="profile-left">
+          <div class="avatar">
+            <img id="avatarPreview" src="../img/avt.jpg" />
+            <label for="avatarInput" class="changeAvatar">Đổi ảnh</label>
+            <input type="file" id="avatarInput" accept="image/*" hidden />
+          </div>
+        </div>
+        <!--Thông tin -->
+        <div class="profile-right">
+          <div class="info">
+            <p><strong>Họ và tên:</strong> <span id="profileHoten"></span></p>
+            <p>
+              <strong>Tên tài khoản:</strong>
+              <span id="profileUsername"></span>
+            </p>
+            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+            <p id="editEmail" class="error-profile"></p>
+            <p>
+              <strong>Số điện thoại:</strong> <span id="profileSdt"></span>
+            </p>
+            <p id="editPhone" class="error-profile"></p>
+            <p><strong>Địa chỉ:</strong> <span id="profileAddress"></span></p>
+            <p>
+              <strong>Ngày sinh:</strong> <span id="profileNgaysinh"></span>
+            </p>
+            <p>
+              <strong>Giới tính:</strong> <span id="profileGioitinh"></span>
+            </p>
+          </div>
+          <button class="edit-btn" id="editBtn" onclick="enableEdit()">
+            ✏️ Chỉnh sửa
+          </button>
+          <button class="save-btn" id="saveBtn" onclick="enableSave()">
+            💾 Lưu
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- TRANG XEM LẠI ĐƠN HÀNG -->
+  <div class="page-content hidden" id="page-review">
+    <div class="checkout-page-header">
+      <h1><i class="i-review"></i> XEM LẠI ĐƠN HÀNG</h1>
+    </div>
+    <div class="checkout-container">
+      <div class="order-review" id="order-review-content"></div>
+      <div class="action-buttons">
+        <button class="checkout-btn-secondary" onclick="chuyenTrang('page-checkout')">
+          <i class="i-back"></i> Quay lại
+        </button>
+        <button class="checkout-btn-confirm" onclick="xacNhanDatHang()">
+          <i class="i-check"></i> Xác nhận đặt hàng
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!--Trang xem đơn hàng đã mua-->
+  <main class="page-content hidden" id="page-history">
+    <section class="ordersTable">
+      <h1>THÔNG TIN ĐƠN HÀNG</h1>
+
+      <div id="orders-list">
+        <div class="orders-grid">
+          <div class="orders-column">
+            <div class="column-header">Mã đơn</div>
+          </div>
+        </div>
+
+        <div class="orders-column">
+          <div class="column-header">Ngày đặt</div>
+        </div>
+
+        <div class="orders-column">
+          <div class="column-header">Trạng thái</div>
+        </div>
+
+        <div class="orders-column">
+          <div class="column-header">Thành tiền</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Trang Liên Hệ -->
+  <main class="page-content hidden" id="page-contact">
+    <section class="contact-page">
+      <h1>LIÊN HỆ</h1>
+      <form class="contact-form">
+        <!-- Contact form -->
+      </form>
+    </section>
+  </main>
+
+  <!-- Nút chat -->
+  <div class="chat-button" onclick="toggleChat()">
+    <i class="bxr bx-message-circle"></i>
+  </div>
+
+  <!-- Nút gọi điện thoại -->
+  <a href="tel:0365921305" class="call-button"><i class="bx bx-phone"></i>
+  </a>
+
+  <!-- Khung chat -->
+  <div class="chat-widget">
+    <div class="chat-header" onclick="toggleChat()">Trò chuyện</div>
+    <div class="chat-body">
+      <p>Xin chào! Bạn cần giúp gì?</p>
+      <div class="send">
+        <input type="text" placeholder="Nhập tin nhắn..." />
+        <button>Gửi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="lien-he">
+    <div class="footer-separator"></div>
+    <div class="footer-content">
+      <h2> ATECHZ</h2>
+      <p>
+        Mang đến cho bạn những sản phẩm công nghệ tiên tiến nhất từ các thương
+        hiệu hàng đầu thế giới. Nâng tầm trải nghiệm số của bạn.
+      </p>
+      <div class="footer-info">
+        <p>📍 273 An Dương Vương, phường Chợ Quán, TPHCM</p>
+        <p>📞 0365921305</p>
+        <p>📧 contact@ATechZ.vn</p>
+      </div>
+      <p class="footer-copy">© 2025ATechZ. No copyright.</p>
+    </div>
+  </footer>
+
+  <!-- Modal Video -->
+  <div id="videoModal" class="video-modal">
+    <div class="video-modal-content">
+      <span class="close-video" onclick="closeVideoModal()">&times;</span>
+      <div class="video-container">
+        <video id="localVideoPlayer" controls>
+          <source src="../img/vdeo1.mp4" type="video/mp4">
+          Trình duyệt của bạn không hỗ trợ thẻ video.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!--SCRIPT-->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
+  <script src="product.js"></script>
+  <script src="script.js"></script>
+  <script src="giohang.js"></script>
+  <script src="splide.js"></script>
+</body>
+
+</html>

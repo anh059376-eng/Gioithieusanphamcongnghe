@@ -1,0 +1,598 @@
+/* ================= CSS Variables ================= */
+:root {
+    --bg-black: #000000;
+    --bg-dark-gray: #111111;
+    --bg-light-gray: #1d1d1f;
+    --text-white: #f5f5f7;
+    --text-gray: #86868b;
+    --accent-orange: #f56300;
+    --accent-orange-dark: #d6651a;
+    --apple-blue: #2997ff;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ================= Reset & Global ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    background: none;
+}
+
+/* Utilities */
+.text-center {
+    text-align: center;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-gray {
+    color: var(--text-gray);
+}
+
+.text-white {
+    color: var(--text-white);
+}
+
+.text-orange {
+    color: var(--accent-orange);
+}
+
+.text-blue {
+    color: var(--apple-blue);
+}
+
+.bg-orange {
+    background-color: var(--accent-orange);
+}
+
+.bg-dark-gray {
+    background-color: var(--bg-dark-gray);
+}
+
+.font-bold {
+    font-weight: 600;
+}
+
+.rounded-box {
+    border-radius: 32px;
+}
+
+.mt-small {
+    margin-top: 16px;
+}
+
+.mt-medium {
+    margin-top: 40px;
+}
+
+.mt-large {
+    margin-top: 80px;
+}
+
+.mb-medium {
+    margin-bottom: 32px;
+}
+
+/* Typography */
+.hero-subtitle {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--accent-orange);
+}
+
+.hero-title {
+    font-size: clamp(80px, 15vw, 200px);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+}
+
+.headline-huge {
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.accent-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--accent-orange);
+}
+
+.description-text {
+    font-size: 24px;
+    max-width: 800px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.gradient-pro {
+    background: linear-gradient(180deg, #ffb37b 0%, #d6651a 100%);
+    -webkit-background-clip: text; /* Dành cho các trình duyệt WebKit (Chrome, Safari) */
+    background-clip: text;         /* Thuộc tính chuẩn cho các trình duyệt khác (Firefox) */
+    color: transparent;            /* Đặt màu chữ thành trong suốt để nền hiển thị qua */
+}
+
+/* Buttons */
+.btn {
+    background-color: var(--apple-blue);
+    color: #fff;
+    border-radius: 999px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #147ce5;
+}
+
+.btn-medium {
+    padding: 12px 24px;
+    font-size: 15px;
+}
+
+.btn-small {
+    padding: 6px 14px;
+    font-size: 12px;
+}
+
+.link-blue {
+    color: var(--apple-blue);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+}
+
+.magichromatic-text {
+    font-weight: inherit;
+    /* Kế thừa font-weight từ thẻ cha */
+    background: linear-gradient(-45deg,
+            #ee7752,
+            #e73c7e,
+            #23a6d5,
+            #23d5ab);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-animation 5s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.link-blue:hover {
+    text-decoration: underline;
+}
+
+.pill-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+    padding: 14px 24px 14px 32px;
+    border-radius: 999px;
+    backdrop-filter: blur(20px);
+    font-size: 17px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+
+.pill-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.icon-bg {
+    background-color: var(--apple-blue);
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px;
+    font-size: 20px;
+}
+
+/* ================= Local Navigation ================= */
+.local-nav {
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    font-size: 12px;
+}
+
+.nav-links a {
+    color: var(--text-gray);
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: var(--text-white);
+}
+
+/* ================= Layout & Sections ================= */
+.section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 24px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.hero-section {
+    position: relative;
+    padding-top: 80px;
+}
+
+.hero-image-wrapper {
+    margin-top: -60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-action {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ================= Horizontal Carousel (Get the highlights) ================= */
+.carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Ẩn scrollbar */
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 24px;
+}
+
+.carousel-slide {
+    flex: 0 0 80%;
+    /* Chiều rộng mỗi slide */
+    max-width: 900px;
+    scroll-snap-align: center;
+    background-color: var(--bg-dark-gray);
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+    height: 650px;
+}
+
+.slide-content {
+    position: absolute;
+    top: 48px;
+    left: 48px;
+    max-width: 500px;
+    z-index: 10;
+}
+
+.slide-text {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Custom slide layout for vertical content */
+.carousel-slide.slide-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+.carousel-slide.slide-vertical .slide-img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover; /* "Zoom" vào trung tâm ảnh, loại bỏ phần đen thừa */
+    border-radius: 24px; /* Bo góc cho đẹp hơn */
+}
+
+.carousel-slide.slide-vertical .slide-content {
+    position: static;
+    text-align: center;
+    max-width: 550px; /* Tăng chiều rộng để vừa với text dài */
+}
+
+.carousel-slide.slide-vertical .slide-text {
+    font-size: 28px; /* Tăng kích thước chữ như ý định của tag <big> */
+    line-height: 1.3;
+}
+
+/* Carousel Dots */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background-color: var(--text-white);
+    width: 24px;
+    border-radius: 999px;
+}
+
+/* ================= Interactive Accordion (Closer Look) ================= */
+.interactive-layout {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 40px;
+}
+
+.accordion-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.accordion-btn {
+    background-color: var(--bg-light-gray);
+    color: var(--text-white);
+    padding: 16px 24px;
+    border-radius: 999px;
+    font-size: 17px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+    width: auto;
+}
+
+.accordion-btn:hover {
+    background-color: #333;
+}
+
+.accordion-btn.active {
+    background-color: #333;
+}
+
+.accordion-btn .icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.border-icon {
+    border: 1px solid var(--text-gray);
+}
+
+.interactive-image {
+    flex: 1;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+.interactive-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* ================= Camera & Focal Selector ================= */
+.camera-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.camera-lens-image {
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+.absolute-bottom-center {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.spec-label {
+    font-size: 20px;
+    color: var(--text-gray);
+    font-weight: 600;
+}
+
+.spec-value {
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.spec-desc {
+    font-size: 20px;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+.focal-selector {
+    display: inline-flex;
+    background-color: var(--bg-light-gray);
+    padding: 8px;
+    border-radius: 999px;
+}
+
+.focal-btn {
+    padding: 12px 24px;
+    border-radius: 999px;
+    color: var(--text-gray);
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.focal-btn:hover {
+    color: var(--text-white);
+}
+
+.focal-btn.active {
+    background-color: var(--text-white);
+    color: var(--bg-black);
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 1024px) {
+    .headline-huge {
+        font-size: 56px;
+    }
+
+    .interactive-layout,
+    .camera-grid {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+
+    .accordion-menu {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .hero-title {
+        font-size: 100px;
+    }
+
+    .carousel-slide {
+        flex: 0 0 90%;
+        height: 500px;
+    }
+
+    .slide-text {
+        font-size: 24px;
+    }
+
+    .focal-selector {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
