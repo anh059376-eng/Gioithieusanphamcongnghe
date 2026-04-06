@@ -1785,28 +1785,28 @@ function initializeProductsFromMenuBanh() {
       category: "iPhone",
       items: [
         {
-          name: "iPhone 15 Pro Max",
+          name: "iPhone 17 Pro Max",
           price: 29000000,
           img: "../img/danhsachspdientu/ip17.jpg",
         },
         {
-          name: "iPhone 17 Air",
+          name: "iPhone Air",
           price: 31000000,
           img: "../img/danhsachspdientu/Iphone/IP AIR/xanhmoiw.png",
         },
+        {
+          name: "iPhone 17",
+          price: 24000000,
+          img: "../img/danhsachspdientu/Iphone/IP17/iphone-17-finish-unselect-gallery-3-202509.webp",
+        }
       ],
     },
     {
       category: "Mac",
       items: [
         {
-          name: "MacBook Pro M3 14 inch",
+          name: "MacBook Neo",
           price: 39000000,
-          img: "../img/danhsachspdientu/Mac.jpeg",
-        },
-        {
-          name: "MacBook Air M2",
-          price: 24000000,
           img: "../img/danhsachspdientu/Mac.jpeg",
         },
       ],
@@ -1817,7 +1817,7 @@ function initializeProductsFromMenuBanh() {
         {
           name: "iPad Air M2",
           price: 17000000,
-          img: "../img/danhsachspdientu/ipadair.jpg",
+          img: "../img/danhsachspdientu/Ipad/ipad-trang-đầu.png",
         },
       ],
     },
@@ -1825,10 +1825,15 @@ function initializeProductsFromMenuBanh() {
       category: "Airpods",
       items: [
         {
-          name: "AirPods Pro 2",
+          name: "AirPods Pro4",
           price: 5500000,
           img: "../img/danhsachspdientu/airpods.png",
         },
+        {
+          name: "AirPods Max2",
+          price: 3500000,
+          img: "../img/danhsachspdientu/airpods-max-select-202409-starlight_FV1.jpeg",
+        }
       ],
     },
   ];
